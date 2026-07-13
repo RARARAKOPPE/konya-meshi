@@ -1,0 +1,2137 @@
+{
+  "version": 9,
+  "note": "食材名の正規化辞書。category は栄養ローテ用バケツ(肉/魚/卵/大豆/野菜/主食/乳/調味料/その他)。allergens は主要28品目。レシートOCR/写真認識/手入力の表記ゆれをここで吸収する。未知語は category=その他, allergens=[], matched=false として扱い、アレルギー世帯では『要確認』に倒すこと。主要28アレルゲンは食材自身のエントリも収録し、材料名照合でも確実に検出する（AIの未知食材対策）。",
+  "normalizeStrip": [
+    "国産",
+    "外国産",
+    "冷凍",
+    "冷蔵",
+    "特売",
+    "お買得",
+    "お買い得",
+    "訳あり",
+    "徳用",
+    "大容量",
+    "増量",
+    "無添加",
+    "減塩",
+    "業務用",
+    "生",
+    "活",
+    "朝採り",
+    "産地直送",
+    "税抜",
+    "税込",
+    "軽減",
+    "★",
+    "※",
+    "▼",
+    "■",
+    "円",
+    "¥",
+    "値引",
+    "ポイント",
+    "P",
+    "p"
+  ],
+  "stripUnitsRegex": "[0-9０-９]+(\\s)?(g|ｇ|kg|個|本|枚|パック|ﾊﾟｯｸ|袋|玉|丁|缶|束|入|cc|ml|ｍｌ|人前|尾|切)",
+  "allergenGroupsNote": "28品目で表せない『〜全般』アレルギー用のグループ。matchCategories/matchCanonicals でレシピ食材を判定し、expandAllergens で28品目側にも展開する。魚グループは甲殻類・軟体類(別アレルギー)を除外する。",
+  "allergenGroups": {
+    "甲殻類": {
+      "label": "甲殻類（えび・かに）",
+      "matchCanonicals": [
+        "えび",
+        "かに",
+        "かにかま"
+      ],
+      "expandAllergens": [
+        "えび",
+        "かに"
+      ]
+    },
+    "ナッツ": {
+      "label": "ナッツ類",
+      "matchCanonicals": [
+        "くるみ",
+        "アーモンド",
+        "カシューナッツ",
+        "落花生"
+      ],
+      "expandAllergens": [
+        "くるみ",
+        "アーモンド",
+        "カシューナッツ",
+        "落花生"
+      ]
+    },
+    "魚": {
+      "label": "魚（魚全般）",
+      "matchCategories": [
+        "魚"
+      ],
+      "excludeCanonicals": [
+        "えび",
+        "かに",
+        "いか",
+        "いくら",
+        "あわび"
+      ],
+      "expandAllergens": [
+        "さけ",
+        "さば"
+      ]
+    },
+    "果物": {
+      "label": "果物（オレンジ・キウイ等）",
+      "matchCanonicals": [
+        "オレンジ",
+        "キウイ",
+        "バナナ",
+        "もも",
+        "りんご",
+        "いちご",
+        "みかん",
+        "ぶどう",
+        "メロン",
+        "すいか",
+        "パイナップル",
+        "柿",
+        "さくらんぼ",
+        "グレープフルーツ",
+        "レモン",
+        "アボカド",
+        "梨"
+      ],
+      "expandAllergens": [
+        "オレンジ",
+        "キウイ",
+        "バナナ",
+        "もも",
+        "りんご"
+      ]
+    }
+  },
+  "ingredients": [
+    {
+      "canonical": "豚こま",
+      "aliases": [
+        "豚こま切れ肉",
+        "豚小間",
+        "豚切り落とし",
+        "豚こま肉",
+        "豚切落し"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "豚ロース",
+      "aliases": [
+        "豚ロース薄切り",
+        "とんかつ用豚肉",
+        "ロース肉"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "豚バラ",
+      "aliases": [
+        "豚ばら",
+        "豚バラ薄切り"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "ひき肉",
+      "aliases": [
+        "挽き肉",
+        "豚ひき肉",
+        "ミンチ",
+        "豚ひき",
+        "鶏ひき",
+        "牛ひき",
+        "あいびき"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ],
+      "ambiguous": true,
+      "maybeAllergens": [
+        "牛肉",
+        "鶏肉"
+      ]
+    },
+    {
+      "canonical": "合いびき肉",
+      "aliases": [
+        "合挽き肉",
+        "あいびき肉",
+        "合い挽き"
+      ],
+      "category": "肉",
+      "allergens": [
+        "牛肉",
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "鶏もも肉",
+      "aliases": [
+        "鶏もも",
+        "鶏モモ",
+        "とりもも",
+        "もも肉",
+        "若鶏もも",
+        "鶏もも切り身",
+        "若どりもも"
+      ],
+      "category": "肉",
+      "allergens": [
+        "鶏肉"
+      ]
+    },
+    {
+      "canonical": "鶏むね肉",
+      "aliases": [
+        "鶏むね",
+        "鶏胸肉",
+        "とりむね",
+        "むね肉",
+        "鶏ムネ"
+      ],
+      "category": "肉",
+      "allergens": [
+        "鶏肉"
+      ]
+    },
+    {
+      "canonical": "鶏肉",
+      "aliases": [
+        "とり肉",
+        "チキン",
+        "鶏"
+      ],
+      "category": "肉",
+      "allergens": [
+        "鶏肉"
+      ]
+    },
+    {
+      "canonical": "牛肉",
+      "aliases": [
+        "牛こま",
+        "牛切り落とし",
+        "牛バラ"
+      ],
+      "category": "肉",
+      "allergens": [
+        "牛肉"
+      ]
+    },
+    {
+      "canonical": "ウインナー",
+      "aliases": [
+        "ソーセージ",
+        "ウインナーソーセージ",
+        "ウィンナー",
+        "あらびきソーセージ"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "ベーコン",
+      "aliases": [],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "ハム",
+      "aliases": [
+        "ロースハム"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "冷凍からあげ",
+      "aliases": [
+        "からあげ",
+        "唐揚げ",
+        "から揚げ"
+      ],
+      "category": "肉",
+      "allergens": [
+        "鶏肉",
+        "小麦",
+        "卵",
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "冷凍ハンバーグ",
+      "aliases": [
+        "ハンバーグ"
+      ],
+      "category": "肉",
+      "allergens": [
+        "牛肉",
+        "豚肉",
+        "卵",
+        "乳",
+        "小麦",
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "鮭",
+      "aliases": [
+        "生鮭",
+        "塩鮭",
+        "さけ",
+        "サケ",
+        "しゃけ",
+        "シャケ",
+        "サーモン",
+        "銀鮭",
+        "甘塩鮭",
+        "秋鮭"
+      ],
+      "category": "魚",
+      "allergens": [
+        "さけ"
+      ]
+    },
+    {
+      "canonical": "さば缶",
+      "aliases": [
+        "サバ缶",
+        "鯖缶",
+        "さばの水煮缶"
+      ],
+      "category": "魚",
+      "allergens": [
+        "さば"
+      ]
+    },
+    {
+      "canonical": "さば",
+      "aliases": [
+        "鯖",
+        "サバ"
+      ],
+      "category": "魚",
+      "allergens": [
+        "さば"
+      ]
+    },
+    {
+      "canonical": "ツナ缶",
+      "aliases": [
+        "ツナ",
+        "シーチキン"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "しらす",
+      "aliases": [
+        "シラス",
+        "ちりめんじゃこ",
+        "じゃこ",
+        "釜揚げしらす"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "ちくわ",
+      "aliases": [
+        "竹輪",
+        "チクワ"
+      ],
+      "category": "魚",
+      "allergens": [
+        "小麦",
+        "大豆",
+        "卵",
+        "さば"
+      ]
+    },
+    {
+      "canonical": "あじの干物",
+      "aliases": [
+        "干物",
+        "アジ",
+        "鯵",
+        "あじ"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "白身魚フライ",
+      "aliases": [
+        "魚フライ",
+        "のり弁の魚"
+      ],
+      "category": "魚",
+      "allergens": [
+        "小麦",
+        "卵",
+        "乳"
+      ]
+    },
+    {
+      "canonical": "ぶり",
+      "aliases": [
+        "ブリ",
+        "鰤",
+        "ぶり切り身"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "卵",
+      "aliases": [
+        "たまご",
+        "玉子",
+        "鶏卵",
+        "タマゴ",
+        "生卵",
+        "ゆで卵",
+        "卵焼き",
+        "溶き卵",
+        "目玉焼き",
+        "半熟卵"
+      ],
+      "category": "卵",
+      "allergens": [
+        "卵"
+      ]
+    },
+    {
+      "canonical": "豆腐",
+      "aliases": [
+        "絹豆腐",
+        "木綿豆腐",
+        "とうふ",
+        "絹ごし豆腐",
+        "充填豆腐",
+        "もめん豆腐",
+        "おぼろ豆腐"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "厚揚げ",
+      "aliases": [
+        "生揚げ",
+        "あつあげ"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "油揚げ",
+      "aliases": [
+        "あぶらあげ",
+        "薄揚げ",
+        "油揚"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "納豆",
+      "aliases": [
+        "なっとう"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "豆乳",
+      "aliases": [
+        "とうにゅう"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "もやし",
+      "aliases": [
+        "モヤシ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "玉ねぎ",
+      "aliases": [
+        "たまねぎ",
+        "タマネギ",
+        "玉葱",
+        "新玉ねぎ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "にんじん",
+      "aliases": [
+        "人参",
+        "ニンジン"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "じゃがいも",
+      "aliases": [
+        "じゃが芋",
+        "ジャガイモ",
+        "馬鈴薯",
+        "メークイン",
+        "男爵"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "キャベツ",
+      "aliases": [
+        "きゃべつ",
+        "春キャベツ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ピーマン",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ミニトマト",
+      "aliases": [
+        "プチトマト"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "トマト",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "大根",
+      "aliases": [
+        "だいこん",
+        "ダイコン"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ほうれん草",
+      "aliases": [
+        "ほうれんそう",
+        "ホウレンソウ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "小松菜",
+      "aliases": [
+        "こまつな"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ねぎ",
+      "aliases": [
+        "長ねぎ",
+        "青ねぎ",
+        "ネギ",
+        "小ねぎ",
+        "万能ねぎ",
+        "長ネギ",
+        "白ネギ",
+        "青ネギ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "白菜",
+      "aliases": [
+        "はくさい"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "きのこ",
+      "aliases": [
+        "しめじ",
+        "えのき",
+        "しいたけ",
+        "まいたけ",
+        "エリンギ",
+        "ぶなしめじ",
+        "椎茸",
+        "マッシュルーム",
+        "ひらたけ",
+        "ぶなぴー"
+      ],
+      "category": "菌類",
+      "allergens": []
+    },
+    {
+      "canonical": "コーン缶",
+      "aliases": [
+        "コーン",
+        "とうもろこし",
+        "スイートコーン"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "冷凍野菜",
+      "aliases": [
+        "ミックスベジタブル",
+        "冷凍ブロッコリー",
+        "冷凍ほうれん草"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "キムチ",
+      "aliases": [
+        "白菜キムチ"
+      ],
+      "category": "野菜",
+      "allergens": [
+        "えび",
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "なす",
+      "aliases": [
+        "ナス",
+        "茄子"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ブロッコリー",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ごはん",
+      "aliases": [
+        "ご飯",
+        "米",
+        "お米",
+        "パックごはん"
+      ],
+      "category": "主食",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "食パン",
+      "aliases": [
+        "パン",
+        "トースト"
+      ],
+      "category": "主食",
+      "allergens": [
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "うどん",
+      "aliases": [
+        "冷凍うどん",
+        "ゆでうどん"
+      ],
+      "category": "主食",
+      "allergens": [
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "パスタ",
+      "aliases": [
+        "スパゲティ",
+        "スパゲッティ",
+        "マカロニ"
+      ],
+      "category": "主食",
+      "allergens": [
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "そば",
+      "aliases": [
+        "蕎麦",
+        "日本そば"
+      ],
+      "category": "主食",
+      "allergens": [
+        "そば",
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "中華麺",
+      "aliases": [
+        "ラーメン",
+        "焼きそば麺",
+        "中華そば",
+        "焼きそば",
+        "蒸し麺"
+      ],
+      "category": "主食",
+      "allergens": [
+        "小麦",
+        "卵"
+      ]
+    },
+    {
+      "canonical": "牛乳",
+      "aliases": [
+        "ぎゅうにゅう",
+        "ミルク",
+        "低脂肪牛乳",
+        "成分無調整牛乳",
+        "加工乳"
+      ],
+      "category": "乳",
+      "allergens": [
+        "乳"
+      ]
+    },
+    {
+      "canonical": "チーズ",
+      "aliases": [
+        "ピザ用チーズ",
+        "スライスチーズ",
+        "とろけるチーズ",
+        "クリームチーズ"
+      ],
+      "category": "乳",
+      "allergens": [
+        "乳"
+      ]
+    },
+    {
+      "canonical": "バター",
+      "aliases": [],
+      "category": "乳",
+      "allergens": [
+        "乳"
+      ]
+    },
+    {
+      "canonical": "ヨーグルト",
+      "aliases": [],
+      "category": "乳",
+      "allergens": [
+        "乳"
+      ]
+    },
+    {
+      "canonical": "めんつゆ",
+      "aliases": [
+        "麺つゆ",
+        "つゆ",
+        "そばつゆ"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "大豆",
+        "さば"
+      ]
+    },
+    {
+      "canonical": "醤油",
+      "aliases": [
+        "しょうゆ",
+        "しょう油",
+        "正油"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "大豆"
+      ],
+      "assumed": true
+    },
+    {
+      "canonical": "味噌",
+      "aliases": [
+        "みそ",
+        "合わせ味噌"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "ポン酢",
+      "aliases": [
+        "ぽん酢",
+        "ポンズ"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "焼肉のたれ",
+      "aliases": [
+        "焼き肉のたれ",
+        "焼肉のタレ"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "大豆",
+        "ごま"
+      ]
+    },
+    {
+      "canonical": "生姜焼きのたれ",
+      "aliases": [
+        "しょうが焼きのたれ"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "麻婆豆腐の素",
+      "aliases": [
+        "麻婆の素",
+        "マーボー豆腐の素"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "大豆",
+        "小麦",
+        "ごま"
+      ]
+    },
+    {
+      "canonical": "カレールウ",
+      "aliases": [
+        "カレールー",
+        "カレーの素"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "乳",
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "中華スープの素",
+      "aliases": [
+        "鶏ガラスープの素",
+        "ウェイパー",
+        "中華だし"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "大豆",
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "だしの素",
+      "aliases": [
+        "和風だし",
+        "ほんだし",
+        "かつおだし"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "大豆",
+        "さば"
+      ],
+      "assumed": true
+    },
+    {
+      "canonical": "マヨネーズ",
+      "aliases": [
+        "マヨ"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "卵"
+      ]
+    },
+    {
+      "canonical": "ケチャップ",
+      "aliases": [
+        "トマトケチャップ"
+      ],
+      "category": "調味料",
+      "allergens": []
+    },
+    {
+      "canonical": "ソース",
+      "aliases": [
+        "ウスターソース",
+        "中濃ソース",
+        "とんかつソース"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "大豆",
+        "りんご"
+      ]
+    },
+    {
+      "canonical": "ドレッシング",
+      "aliases": [
+        "ごまドレッシング",
+        "和風ドレッシング"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "大豆",
+        "ごま",
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "えび",
+      "aliases": [
+        "エビ",
+        "海老",
+        "むきえび",
+        "バナメイえび",
+        "ブラックタイガー",
+        "桜えび",
+        "干しえび",
+        "えびフライ"
+      ],
+      "category": "魚",
+      "allergens": [
+        "えび"
+      ]
+    },
+    {
+      "canonical": "かに",
+      "aliases": [
+        "カニ",
+        "蟹",
+        "ずわいがに",
+        "たらばがに"
+      ],
+      "category": "魚",
+      "allergens": [
+        "かに"
+      ]
+    },
+    {
+      "canonical": "かにかま",
+      "aliases": [
+        "カニカマ",
+        "かに風味かまぼこ"
+      ],
+      "category": "魚",
+      "allergens": [
+        "かに",
+        "小麦",
+        "卵"
+      ]
+    },
+    {
+      "canonical": "いか",
+      "aliases": [
+        "イカ",
+        "烏賊",
+        "するめ"
+      ],
+      "category": "魚",
+      "allergens": [
+        "いか"
+      ]
+    },
+    {
+      "canonical": "いくら",
+      "aliases": [
+        "イクラ",
+        "筋子",
+        "すじこ"
+      ],
+      "category": "魚",
+      "allergens": [
+        "いくら"
+      ]
+    },
+    {
+      "canonical": "あわび",
+      "aliases": [
+        "アワビ",
+        "鮑"
+      ],
+      "category": "魚",
+      "allergens": [
+        "あわび"
+      ]
+    },
+    {
+      "canonical": "くるみ",
+      "aliases": [
+        "クルミ",
+        "胡桃"
+      ],
+      "category": "その他",
+      "allergens": [
+        "くるみ"
+      ]
+    },
+    {
+      "canonical": "アーモンド",
+      "aliases": [
+        "スライスアーモンド"
+      ],
+      "category": "その他",
+      "allergens": [
+        "アーモンド"
+      ]
+    },
+    {
+      "canonical": "カシューナッツ",
+      "aliases": [
+        "カシュー"
+      ],
+      "category": "その他",
+      "allergens": [
+        "カシューナッツ"
+      ]
+    },
+    {
+      "canonical": "落花生",
+      "aliases": [
+        "ピーナッツ",
+        "ピーナツ",
+        "ピーナッツバター",
+        "南京豆"
+      ],
+      "category": "その他",
+      "allergens": [
+        "落花生"
+      ]
+    },
+    {
+      "canonical": "ごま",
+      "aliases": [
+        "胡麻",
+        "すりごま",
+        "いりごま",
+        "ごま油",
+        "練りごま"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "ごま"
+      ],
+      "assumed": true
+    },
+    {
+      "canonical": "やまいも",
+      "aliases": [
+        "山芋",
+        "長芋",
+        "ながいも",
+        "とろろ",
+        "大和芋"
+      ],
+      "category": "野菜",
+      "allergens": [
+        "やまいも"
+      ]
+    },
+    {
+      "canonical": "まつたけ",
+      "aliases": [
+        "松茸",
+        "マツタケ"
+      ],
+      "category": "菌類",
+      "allergens": [
+        "まつたけ"
+      ]
+    },
+    {
+      "canonical": "オレンジ",
+      "aliases": [
+        "オレンジジュース"
+      ],
+      "category": "その他",
+      "allergens": [
+        "オレンジ"
+      ]
+    },
+    {
+      "canonical": "キウイ",
+      "aliases": [
+        "キウイフルーツ"
+      ],
+      "category": "その他",
+      "allergens": [
+        "キウイ"
+      ]
+    },
+    {
+      "canonical": "バナナ",
+      "aliases": [],
+      "category": "その他",
+      "allergens": [
+        "バナナ"
+      ]
+    },
+    {
+      "canonical": "もも",
+      "aliases": [
+        "桃",
+        "ピーチ"
+      ],
+      "category": "その他",
+      "allergens": [
+        "もも"
+      ]
+    },
+    {
+      "canonical": "りんご",
+      "aliases": [
+        "リンゴ",
+        "林檎",
+        "アップル"
+      ],
+      "category": "その他",
+      "allergens": [
+        "りんご"
+      ]
+    },
+    {
+      "canonical": "ゼラチン",
+      "aliases": [],
+      "category": "その他",
+      "allergens": [
+        "ゼラチン"
+      ]
+    },
+    {
+      "canonical": "小麦粉",
+      "aliases": [
+        "薄力粉",
+        "強力粉",
+        "天ぷら粉",
+        "お好み焼き粉",
+        "唐揚げ粉"
+      ],
+      "category": "その他",
+      "allergens": [
+        "小麦"
+      ],
+      "assumed": true
+    },
+    {
+      "canonical": "生クリーム",
+      "aliases": [
+        "ホイップ",
+        "ホイップクリーム"
+      ],
+      "category": "乳",
+      "allergens": [
+        "乳"
+      ]
+    },
+    {
+      "canonical": "はちみつ",
+      "aliases": [
+        "蜂蜜",
+        "ハチミツ"
+      ],
+      "category": "調味料",
+      "allergens": []
+    },
+    {
+      "canonical": "いちご",
+      "aliases": [
+        "苺",
+        "ストロベリー"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "みかん",
+      "aliases": [
+        "ミカン",
+        "温州みかん"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "ぶどう",
+      "aliases": [
+        "ブドウ",
+        "葡萄"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "メロン",
+      "aliases": [],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "すいか",
+      "aliases": [
+        "スイカ",
+        "西瓜"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "パイナップル",
+      "aliases": [
+        "パイン"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "柿",
+      "aliases": [
+        "かき"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "さくらんぼ",
+      "aliases": [
+        "チェリー"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "グレープフルーツ",
+      "aliases": [],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "レモン",
+      "aliases": [],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "アボカド",
+      "aliases": [],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "梨",
+      "aliases": [
+        "なし"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "ロールパン",
+      "aliases": [
+        "バターロール",
+        "テーブルロール"
+      ],
+      "category": "主食",
+      "allergens": [
+        "小麦",
+        "乳",
+        "卵"
+      ]
+    },
+    {
+      "canonical": "焼豚",
+      "aliases": [
+        "チャーシュー",
+        "焼き豚"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "生ハム",
+      "aliases": [
+        "生はむ"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "ソーセージ",
+      "aliases": [
+        "フランクフルト"
+      ],
+      "category": "肉",
+      "allergens": [
+        "豚肉"
+      ]
+    },
+    {
+      "canonical": "まぐろ",
+      "aliases": [
+        "マグロ",
+        "鮪",
+        "まぐろたたき",
+        "ネギトロ",
+        "びんちょうまぐろ"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "めざし",
+      "aliases": [
+        "目刺し"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "さんま",
+      "aliases": [
+        "秋刀魚"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "さわら",
+      "aliases": [
+        "鰆"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "たら",
+      "aliases": [
+        "鱈",
+        "生だら",
+        "たら切り身"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "ほっけ",
+      "aliases": [],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "いわし",
+      "aliases": [
+        "鰯"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "あじ",
+      "aliases": [
+        "鯵"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "かれい",
+      "aliases": [
+        "鰈"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "たい",
+      "aliases": [
+        "鯛"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "高野豆腐",
+      "aliases": [
+        "こうや豆腐",
+        "高野どうふ"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "春雨",
+      "aliases": [
+        "はるさめ"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "レタス",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "きゅうり",
+      "aliases": [
+        "胡瓜"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ごぼう",
+      "aliases": [
+        "牛蒡"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "れんこん",
+      "aliases": [
+        "蓮根"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "かぼちゃ",
+      "aliases": [
+        "南瓜"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "パプリカ",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "アスパラ",
+      "aliases": [
+        "アスパラガス"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "オクラ",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "水菜",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "チンゲン菜",
+      "aliases": [
+        "青梗菜"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ニラ",
+      "aliases": [
+        "韮"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "セロリ",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "かぶ",
+      "aliases": [
+        "蕪"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "さつまいも",
+      "aliases": [
+        "薩摩芋",
+        "さつま芋"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "里芋",
+      "aliases": [
+        "さといも"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "とうもろこし",
+      "aliases": [
+        "トウモロコシ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "塩",
+      "aliases": [
+        "食塩"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "砂糖",
+      "aliases": [
+        "上白糖",
+        "グラニュー糖"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "こしょう",
+      "aliases": [
+        "胡椒",
+        "ブラックペッパー"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "サラダ油",
+      "aliases": [
+        "油",
+        "サラダ油",
+        "食用油"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "ごま油",
+      "aliases": [],
+      "category": "調味料",
+      "allergens": [
+        "ごま"
+      ],
+      "assumed": true
+    },
+    {
+      "canonical": "酢",
+      "aliases": [
+        "米酢",
+        "穀物酢"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "みりん",
+      "aliases": [
+        "味醂"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "料理酒",
+      "aliases": [
+        "酒",
+        "清酒"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "片栗粉",
+      "aliases": [
+        "かたくり粉"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "豆板醤",
+      "aliases": [
+        "トウバンジャン"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "コチュジャン",
+      "aliases": [],
+      "category": "調味料",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "オイスターソース",
+      "aliases": [
+        "オイスター"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "小麦",
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "米",
+      "aliases": [
+        "お米",
+        "無洗米",
+        "新米",
+        "白米"
+      ],
+      "category": "主食",
+      "allergens": []
+    },
+    {
+      "canonical": "わさび",
+      "aliases": [
+        "チューブわさび",
+        "おろしわさび",
+        "山葵"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "からし",
+      "aliases": [
+        "辛子",
+        "練りからし",
+        "マスタード"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "粉チーズ",
+      "aliases": [
+        "粉チーズ",
+        "パルメザン"
+      ],
+      "category": "調味料",
+      "allergens": [
+        "乳"
+      ],
+      "assumed": true
+    },
+    {
+      "canonical": "しょうがチューブ",
+      "aliases": [
+        "おろししょうが",
+        "チューブしょうが",
+        "生姜チューブ",
+        "おろし生姜"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "にんにくチューブ",
+      "aliases": [
+        "おろしにんにく",
+        "チューブにんにく",
+        "ガーリックチューブ"
+      ],
+      "category": "調味料",
+      "allergens": [],
+      "assumed": true
+    },
+    {
+      "canonical": "しょうが",
+      "aliases": [
+        "生姜"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "にんにく",
+      "aliases": [
+        "ニンニク",
+        "大蒜",
+        "ガーリック"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "あさり",
+      "aliases": [
+        "浅蜊"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "ほたて",
+      "aliases": [
+        "帆立",
+        "ホタテ"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "たこ",
+      "aliases": [
+        "タコ",
+        "蛸"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "たらこ",
+      "aliases": [
+        "明太子",
+        "辛子明太子",
+        "めんたいこ"
+      ],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "はんぺん",
+      "aliases": [],
+      "category": "魚",
+      "allergens": [
+        "やまいも",
+        "卵"
+      ]
+    },
+    {
+      "canonical": "さつま揚げ",
+      "aliases": [
+        "薩摩揚げ"
+      ],
+      "category": "魚",
+      "allergens": [
+        "小麦",
+        "大豆",
+        "卵"
+      ]
+    },
+    {
+      "canonical": "かまぼこ",
+      "aliases": [
+        "蒲鉾"
+      ],
+      "category": "魚",
+      "allergens": [
+        "小麦",
+        "卵"
+      ]
+    },
+    {
+      "canonical": "ししゃも",
+      "aliases": [],
+      "category": "魚",
+      "allergens": []
+    },
+    {
+      "canonical": "枝豆",
+      "aliases": [
+        "えだまめ"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "がんもどき",
+      "aliases": [
+        "がんも"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "おから",
+      "aliases": [],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "きなこ",
+      "aliases": [
+        "きな粉"
+      ],
+      "category": "大豆",
+      "allergens": [
+        "大豆"
+      ]
+    },
+    {
+      "canonical": "いんげん",
+      "aliases": [
+        "さやいんげん",
+        "インゲン"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ズッキーニ",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "カリフラワー",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "春菊",
+      "aliases": [
+        "しゅんぎく"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "大葉",
+      "aliases": [
+        "青じそ",
+        "しそ",
+        "シソ",
+        "大葉(青じそ)"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "みょうが",
+      "aliases": [
+        "茗荷"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "たけのこ",
+      "aliases": [
+        "筍",
+        "タケノコ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ゴーヤ",
+      "aliases": [
+        "にがうり",
+        "ゴーヤー"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "豆苗",
+      "aliases": [
+        "とうみょう"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "グリーンピース",
+      "aliases": [
+        "グリンピース"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "三つ葉",
+      "aliases": [
+        "みつば"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "かいわれ",
+      "aliases": [
+        "かいわれ大根"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "切り干し大根",
+      "aliases": [
+        "切干大根"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "わかめ",
+      "aliases": [
+        "ワカメ",
+        "乾燥わかめ"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "ひじき",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "海苔",
+      "aliases": [
+        "のり",
+        "焼き海苔",
+        "焼のり"
+      ],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "もずく",
+      "aliases": [],
+      "category": "野菜",
+      "allergens": []
+    },
+    {
+      "canonical": "なめこ",
+      "aliases": [],
+      "category": "菌類",
+      "allergens": []
+    },
+    {
+      "canonical": "そうめん",
+      "aliases": [
+        "素麺",
+        "ひやむぎ",
+        "冷麦"
+      ],
+      "category": "主食",
+      "allergens": [
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "もち",
+      "aliases": [
+        "餅",
+        "切り餅"
+      ],
+      "category": "主食",
+      "allergens": []
+    },
+    {
+      "canonical": "ビーフン",
+      "aliases": [],
+      "category": "主食",
+      "allergens": []
+    },
+    {
+      "canonical": "オートミール",
+      "aliases": [],
+      "category": "主食",
+      "allergens": []
+    },
+    {
+      "canonical": "練乳",
+      "aliases": [
+        "れん乳"
+      ],
+      "category": "乳",
+      "allergens": [
+        "乳"
+      ]
+    },
+    {
+      "canonical": "こんにゃく",
+      "aliases": [
+        "蒟蒻"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "しらたき",
+      "aliases": [
+        "糸こんにゃく"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "麩",
+      "aliases": [
+        "ふ"
+      ],
+      "category": "その他",
+      "allergens": [
+        "小麦"
+      ]
+    },
+    {
+      "canonical": "寒天",
+      "aliases": [],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "ブルーベリー",
+      "aliases": [],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "マンゴー",
+      "aliases": [],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "いちじく",
+      "aliases": [
+        "無花果"
+      ],
+      "category": "その他",
+      "allergens": []
+    },
+    {
+      "canonical": "うずら卵",
+      "aliases": [
+        "うずらの卵"
+      ],
+      "category": "卵",
+      "allergens": [
+        "卵"
+      ]
+    }
+  ],
+  "assumedNote": "assumed:true の調味料は『常備（塩・砂糖・醤油等）』。冷蔵庫の画では非表示、AIは常にある前提（買い足しに出さない）。"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "konya-meshi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "check:expo": "expo install --check"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "babel-preset-expo": "~54.0.10",
+    "expo": "^54",
+    "expo-asset": "~12.0.13",
+    "expo-dev-client": "~6.0.21",
+    "expo-image-picker": "~17.0.11",
+    "expo-status-bar": "~3.0.9",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-apple-llm": "^1.0.16",
+    "react-native-svg": "15.12.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.0",
+    "@types/react": "~19.1.10",
+    "typescript": "^5.3.3"
+  },
+  "private": true
+}

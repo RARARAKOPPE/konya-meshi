@@ -1,0 +1,337 @@
+{
+  "version": 2,
+  "note": "今日飯 フォールバック献立。AI失敗・オフライン・在庫空などで必ず1品出すための内蔵データ。recipe部分はAIの出力スキーマと同一。selectは選択用メタ情報（クライアント専用）。",
+  "allergenNote": "select.allergens は主要28品目に準拠。加工品・調味料は商品により異なるため、最終的な安全確認は提案結果画面の材料表示でユーザーに促すこと（アプリは保証しない）。",
+  "recipes": [
+    {
+      "id": "nattou_tkg",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["大豆","卵"], "pantryStaple": true, "allergens": ["卵","大豆"], "safety": { "rawEgg": true, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "納豆卵かけごはん", "reason": "火を使わず3分で完結します。", "cookTimeMinutes": 3, "washUp": "茶碗だけ",
+        "childFriendly": true, "childNote": "生卵が不安な年齢の子には卵焼きに替えてください",
+        "usedIngredients": [{"name":"納豆","fromFridge":true},{"name":"卵","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": [], "steps": ["ごはんをよそう","納豆を混ぜてのせる","卵をのせて完成"],
+        "tags": ["今日を乗り切る","包丁なし","洗い物少なめ","節約"], "nutritionFocus": "大豆"
+      }
+    },
+    {
+      "id": "tsukimi_udon",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["卵"], "pantryStaple": true, "allergens": ["卵","小麦","大豆"], "safety": { "rawEgg": true, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "月見うどん", "reason": "冷凍うどんと卵だけ。鍋ひとつで5分です。", "cookTimeMinutes": 5, "washUp": "鍋ひとつ",
+        "childFriendly": true, "childNote": "半熟卵が不安な子には卵をよく火に通してください",
+        "usedIngredients": [{"name":"冷凍うどん","fromFridge":true},{"name":"卵","fromFridge":true}],
+        "missingIngredients": ["めんつゆ"], "steps": ["うどんを温める","つゆを注ぐ","卵を割り入れて完成"],
+        "tags": ["時短","包丁なし","洗い物少なめ"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "shirasu_don",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["魚","卵"], "pantryStaple": false, "allergens": ["卵","小麦","大豆"], "safety": { "rawEgg": true, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "しらす丼", "reason": "魚が不足ぎみの日に、包丁なしで5分。", "cookTimeMinutes": 5, "washUp": "茶碗だけ",
+        "childFriendly": true, "childNote": "しらすは塩分が多いので子どもには少なめに。卵黄が不安なら省く",
+        "usedIngredients": [{"name":"しらす","fromFridge":true},{"name":"卵","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": [], "steps": ["ごはんにしらすをのせる","卵黄をのせる","醤油を少し垂らす"],
+        "tags": ["時短","包丁なし","栄養優先"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "hiyayakko_gohan",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["大豆"], "pantryStaple": true, "allergens": ["大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "冷奴ごはん定食", "reason": "豆腐を切って乗せるだけ。限界の日の最短ルート。", "cookTimeMinutes": 4, "washUp": "茶碗と皿だけ",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"豆腐","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": ["味噌汁の素"], "steps": ["豆腐を皿に出す","薬味と醤油をかける","ごはんと味噌汁を添える"],
+        "tags": ["今日を乗り切る","包丁なし","洗い物少なめ","節約"], "nutritionFocus": "大豆"
+      }
+    },
+    {
+      "id": "corn_egg_soup_gohan",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["卵","野菜"], "pantryStaple": true, "allergens": ["卵","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "卵とコーンの中華スープごはん", "reason": "鍋ひとつ・5分で温まる一杯。", "cookTimeMinutes": 5, "washUp": "鍋ひとつ",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"卵","fromFridge":true},{"name":"コーン缶","fromFridge":true}],
+        "missingIngredients": ["中華スープの素"], "steps": ["湯にスープの素とコーンを入れる","溶き卵を回し入れる","ごはんにかける"],
+        "tags": ["時短","包丁なし","洗い物少なめ"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "chikin_kara_rei",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["肉"], "pantryStaple": false, "allergens": ["鶏肉","小麦","卵","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": true, "spicy": false } },
+      "recipe": {
+        "title": "冷凍からあげ定食", "reason": "温めるだけ。限界でも子どもが喜ぶ一皿。", "cookTimeMinutes": 6, "washUp": "皿だけ",
+        "childFriendly": true, "childNote": "ミニトマトを添える場合は半分に切る",
+        "usedIngredients": [{"name":"冷凍からあげ","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": ["ミニトマト"], "steps": ["からあげを温める","ごはんをよそう","野菜を添える"],
+        "tags": ["今日を乗り切る","子ども完食","洗い物少なめ"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "wiener_yasai_mushi",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["肉","野菜"], "pantryStaple": false, "allergens": ["豚肉","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": true, "spicy": false } },
+      "recipe": {
+        "title": "ウインナーと野菜のレンジ蒸し", "reason": "レンジだけ・包丁少なめで子ども好みの味。", "cookTimeMinutes": 8, "washUp": "耐熱皿ひとつ",
+        "childFriendly": true, "childNote": "ウインナーは縦半分など小さく切ると喉に詰まりにくい",
+        "usedIngredients": [{"name":"ウインナー","fromFridge":true},{"name":"冷凍野菜","fromFridge":true}],
+        "missingIngredients": [], "steps": ["皿に野菜とウインナーを乗せる","ラップしてレンジ加熱","塩こしょうで味付け"],
+        "tags": ["レンジ併用","子ども完食","洗い物少なめ"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "rei_mushidori_moyashi",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["肉","野菜"], "pantryStaple": false, "allergens": ["鶏肉","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "レンジ蒸し鶏ともやし", "reason": "レンジだけ・洗い物ほぼゼロ。", "cookTimeMinutes": 8, "washUp": "耐熱皿ひとつ",
+        "childFriendly": true, "childNote": "タレは子どもの分を取り分けてからかける",
+        "usedIngredients": [{"name":"鶏むね肉","fromFridge":true},{"name":"もやし","fromFridge":true}],
+        "missingIngredients": ["ポン酢"], "steps": ["皿にもやしと鶏肉を乗せる","ラップしてレンジ加熱","ポン酢をかける"],
+        "tags": ["レンジ併用","包丁なし","洗い物少なめ"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "sake_corn_rei",
+      "select": { "fatigueOk": ["疲れた","限界"], "categories": ["魚","野菜"], "pantryStaple": false, "allergens": ["さけ","乳","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "鮭とコーンのレンジ蒸し", "reason": "魚不足の日に、レンジで野菜ごと。", "cookTimeMinutes": 9, "washUp": "耐熱皿ひとつ",
+        "childFriendly": true, "childNote": "骨を取り除いてから子どもに",
+        "usedIngredients": [{"name":"生鮭","fromFridge":true},{"name":"コーン","fromFridge":true},{"name":"玉ねぎ","fromFridge":true}],
+        "missingIngredients": ["バター"], "steps": ["皿に野菜と鮭を乗せる","ラップしてレンジ加熱","バターと醤油で味付け"],
+        "tags": ["レンジ併用","栄養優先","洗い物少なめ"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "butakoma_tofu_don",
+      "select": { "fatigueOk": ["疲れた","限界","普通"], "categories": ["肉","大豆"], "pantryStaple": false, "allergens": ["豚肉","大豆","卵","小麦"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "豚こま豆腐丼", "reason": "工程数を最小化した限界モードの定番。", "cookTimeMinutes": 10, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "子ども用は味付け前に取り分けると安心",
+        "usedIngredients": [{"name":"豚こま","fromFridge":true},{"name":"豆腐","fromFridge":true},{"name":"卵","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": ["めんつゆ"], "steps": ["豚こまを炒める","豆腐を崩して味付け","溶き卵を回し入れごはんにのせる"],
+        "tags": ["今日を乗り切る","時短","洗い物少なめ"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "tuna_egg_chahan",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["魚","卵"], "pantryStaple": true, "allergens": ["卵","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "ツナと卵のチャーハン", "reason": "ツナ缶と卵で半端野菜も片付く。", "cookTimeMinutes": 10, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "薄味にすれば子どももそのまま",
+        "usedIngredients": [{"name":"ツナ缶","fromFridge":true},{"name":"卵","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": [], "steps": ["卵を炒める","ごはんとツナを加える","醤油で味を整える"],
+        "tags": ["冷蔵庫整理","子ども完食","節約"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "natto_chahan",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["大豆","卵"], "pantryStaple": true, "allergens": ["大豆","卵","小麦"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "納豆チャーハン", "reason": "納豆を炒めると食べやすく、栄養も手軽。", "cookTimeMinutes": 10, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"納豆","fromFridge":true},{"name":"卵","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": [], "steps": ["卵とごはんを炒める","納豆を加えて炒める","醤油で味付け"],
+        "tags": ["節約","時短","冷蔵庫整理"], "nutritionFocus": "大豆"
+      }
+    },
+    {
+      "id": "buta_moyashi_itame",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["肉","野菜"], "pantryStaple": false, "allergens": ["豚肉","小麦","大豆","ごま"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "豚もやし炒め", "reason": "安い食材だけでごはんが進む。", "cookTimeMinutes": 10, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"豚こま","fromFridge":true},{"name":"もやし","fromFridge":true}],
+        "missingIngredients": ["焼肉のたれ"], "steps": ["豚こまを炒める","もやしを加える","焼肉のたれで味付け"],
+        "tags": ["節約","時短"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "niku_udon",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["肉"], "pantryStaple": true, "allergens": ["小麦","豚肉","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "肉うどん", "reason": "冷凍うどんと豚肉で温まる一杯。", "cookTimeMinutes": 9, "washUp": "鍋ひとつ",
+        "childFriendly": true, "childNote": "子どもの分は麺を短く切ると食べやすい",
+        "usedIngredients": [{"name":"冷凍うどん","fromFridge":true},{"name":"豚こま","fromFridge":true}],
+        "missingIngredients": ["めんつゆ"], "steps": ["つゆを温め豚肉を煮る","うどんを加える","盛り付けて完成"],
+        "tags": ["時短","子ども完食"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "tamagoyaki_teishoku",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["卵"], "pantryStaple": true, "allergens": ["卵","大豆","さば"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "だし巻き卵定食", "reason": "卵さえあれば成立する優しい定食。", "cookTimeMinutes": 10, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"卵","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": ["だしの素"], "steps": ["卵を溶きだしを混ぜる","フライパンで巻く","ごはんと味噌汁を添える"],
+        "tags": ["時短","子ども完食","節約"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "atsuage_teriyaki",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["大豆"], "pantryStaple": false, "allergens": ["大豆","小麦","ごま"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "厚揚げの照り焼き", "reason": "厚揚げを焼くだけでたんぱく質を補える。", "cookTimeMinutes": 8, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"厚揚げ","fromFridge":true}],
+        "missingIngredients": ["焼肉のたれ"], "steps": ["厚揚げを切って焼く","たれを絡める","ごはんに添える"],
+        "tags": ["時短","節約","子ども完食"], "nutritionFocus": "大豆"
+      }
+    },
+    {
+      "id": "tofu_steak",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["大豆"], "pantryStaple": false, "allergens": ["大豆","小麦","乳"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "豆腐ステーキ", "reason": "豆腐を焼いてたれをかけるだけ。", "cookTimeMinutes": 10, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"豆腐","fromFridge":true}],
+        "missingIngredients": ["醤油","バター"], "steps": ["豆腐の水をきって焼く","両面を焼く","醤油バターで味付け"],
+        "tags": ["節約","時短"], "nutritionFocus": "大豆"
+      }
+    },
+    {
+      "id": "chikuwa_piman",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["魚","野菜"], "pantryStaple": true, "allergens": ["小麦","大豆","卵","さば"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "ちくわとピーマン炒め", "reason": "練り物で手早く魚介とお野菜を一品。", "cookTimeMinutes": 8, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "ピーマンが苦手な子には細かく刻む",
+        "usedIngredients": [{"name":"ちくわ","fromFridge":true},{"name":"ピーマン","fromFridge":true}],
+        "missingIngredients": ["めんつゆ"], "steps": ["ちくわとピーマンを切る","炒める","めんつゆで味付け"],
+        "tags": ["節約","冷蔵庫整理","時短"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "saba_can_misoshiru",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["魚","野菜"], "pantryStaple": true, "allergens": ["さば","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "さば缶の具だくさん味噌汁ごはん", "reason": "魚と野菜を一度に補える栄養優先の一杯。", "cookTimeMinutes": 10, "washUp": "鍋ひとつ",
+        "childFriendly": true, "childNote": "骨は柔らかいが念のため確認を",
+        "usedIngredients": [{"name":"さば缶","fromFridge":true},{"name":"冷凍野菜","fromFridge":true}],
+        "missingIngredients": ["味噌"], "steps": ["鍋で野菜を煮る","さば缶を汁ごと入れる","味噌を溶く"],
+        "tags": ["栄養優先","節約","冷蔵庫整理"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "oyakodon",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["肉","卵"], "pantryStaple": false, "allergens": ["鶏肉","卵","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "親子丼", "reason": "鶏と卵で子どもも食べやすい定番丼。", "cookTimeMinutes": 12, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "子ども用は卵をしっかり火を通す",
+        "usedIngredients": [{"name":"鶏もも肉","fromFridge":true},{"name":"卵","fromFridge":true},{"name":"玉ねぎ","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": ["めんつゆ"], "steps": ["鶏と玉ねぎを煮る","溶き卵を回し入れる","ごはんにのせる"],
+        "tags": ["子ども完食","時短"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "tuna_wafu_pasta",
+      "select": { "fatigueOk": ["疲れた","普通"], "categories": ["魚"], "pantryStaple": true, "allergens": ["小麦","大豆","乳"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "ツナの和風パスタ", "reason": "ツナ缶と乾麺だけで作れる手軽な一皿。", "cookTimeMinutes": 12, "washUp": "鍋とフライパン",
+        "childFriendly": true, "childNote": "子ども用は麺を短く切る",
+        "usedIngredients": [{"name":"パスタ","fromFridge":true},{"name":"ツナ缶","fromFridge":true}],
+        "missingIngredients": ["めんつゆ","バター"], "steps": ["パスタを茹でる","ツナと調味料を和える","盛り付ける"],
+        "tags": ["節約","子ども完食"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "omurice_kantan",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["卵"], "pantryStaple": true, "allergens": ["卵"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "簡単オムライス", "reason": "子どもが完食しやすい定番。元気な日のごほうびに。", "cookTimeMinutes": 15, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "卵はしっかり加熱する",
+        "usedIngredients": [{"name":"卵","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": ["ケチャップ"], "steps": ["ケチャップライスを作る","薄焼き卵を焼く","ごはんを包む"],
+        "tags": ["子ども完食"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "buta_shogayaki",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["肉"], "pantryStaple": false, "allergens": ["豚肉","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "豚の生姜焼き", "reason": "定番のスタミナおかず。野菜も添えやすい。", "cookTimeMinutes": 12, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "子ども用は生姜を控えめに",
+        "usedIngredients": [{"name":"豚ロース","fromFridge":true},{"name":"玉ねぎ","fromFridge":true}],
+        "missingIngredients": ["生姜焼きのたれ"], "steps": ["豚肉と玉ねぎを炒める","たれを絡める","キャベツを添える"],
+        "tags": ["子ども完食","栄養優先"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "mabo_dofu_moto",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["大豆","肉"], "pantryStaple": false, "allergens": ["大豆","豚肉","小麦","ごま"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": true } },
+      "recipe": {
+        "title": "麻婆豆腐（市販の素）", "reason": "素を使えば失敗なし。たんぱく質もしっかり。", "cookTimeMinutes": 12, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "甘口の素を選ぶか、辛味を加える前に子ども分を取り分ける",
+        "usedIngredients": [{"name":"豆腐","fromFridge":true},{"name":"ひき肉","fromFridge":true}],
+        "missingIngredients": ["麻婆豆腐の素"], "steps": ["ひき肉を炒める","素と豆腐を加える","とろみがついたら完成"],
+        "tags": ["時短"], "nutritionFocus": "大豆"
+      }
+    },
+    {
+      "id": "buta_kimchi",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["肉","野菜"], "pantryStaple": false, "allergens": ["豚肉","大豆","小麦","えび"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": true } },
+      "recipe": {
+        "title": "豚キムチ", "reason": "炒めるだけでごはんが進む大人向けの一皿。", "cookTimeMinutes": 10, "washUp": "フライパンひとつ",
+        "childFriendly": false, "childNote": "辛いので子ども分は炒める前に取り分けて味付けを分ける",
+        "usedIngredients": [{"name":"豚こま","fromFridge":true},{"name":"キムチ","fromFridge":true}],
+        "missingIngredients": [], "steps": ["豚こまを炒める","キムチを加える","醤油で味を整える"],
+        "tags": ["時短","節約"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "sake_shioyaki",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["魚"], "pantryStaple": false, "allergens": ["さけ","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "鮭の塩焼き定食", "reason": "魚が不足している週に。焼くだけで一品。", "cookTimeMinutes": 12, "washUp": "フライパンひとつ",
+        "childFriendly": true, "childNote": "骨を取ってほぐすと子どもが食べやすい",
+        "usedIngredients": [{"name":"塩鮭","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": [], "steps": ["鮭を焼く","ごはんをよそう","味噌汁を添える"],
+        "tags": ["栄養優先","子ども完食"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "aji_himono",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["魚"], "pantryStaple": false, "allergens": ["大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "あじの干物定食", "reason": "焼くだけで魚をしっかり補える。", "cookTimeMinutes": 12, "washUp": "グリルとごはん茶碗",
+        "childFriendly": true, "childNote": "小骨が多いので子どもには取り除いてから。塩分も多め",
+        "usedIngredients": [{"name":"あじの干物","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": [], "steps": ["干物を焼く","大根おろしを添える","ごはんと味噌汁を添える"],
+        "tags": ["栄養優先","節約"], "nutritionFocus": "魚"
+      }
+    },
+    {
+      "id": "rei_nikujaga",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["肉","野菜"], "pantryStaple": false, "allergens": ["豚肉","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "レンジ肉じゃが", "reason": "煮込まずレンジで作れる定番おかず。", "cookTimeMinutes": 15, "washUp": "耐熱ボウルひとつ",
+        "childFriendly": true, "childNote": "じゃがいもは小さめに切ると食べやすい",
+        "usedIngredients": [{"name":"豚こま","fromFridge":true},{"name":"じゃがいも","fromFridge":true},{"name":"玉ねぎ","fromFridge":true},{"name":"にんじん","fromFridge":true}],
+        "missingIngredients": ["めんつゆ"], "steps": ["野菜と肉を切る","調味料とレンジ加熱","混ぜて余熱で味をなじませる"],
+        "tags": ["栄養優先","子ども完食"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "hamburg_rei",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["肉"], "pantryStaple": false, "allergens": ["牛肉","豚肉","卵","乳","小麦","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": false } },
+      "recipe": {
+        "title": "冷凍ハンバーグと温野菜", "reason": "温めるだけで子どもが喜ぶ定番プレート。", "cookTimeMinutes": 12, "washUp": "皿と耐熱皿",
+        "childFriendly": true, "childNote": null,
+        "usedIngredients": [{"name":"冷凍ハンバーグ","fromFridge":true},{"name":"冷凍野菜","fromFridge":true},{"name":"ごはん","fromFridge":true}],
+        "missingIngredients": [], "steps": ["ハンバーグを温める","野菜をレンジで温める","盛り付ける"],
+        "tags": ["子ども完食","洗い物少なめ"], "nutritionFocus": null
+      }
+    },
+    {
+      "id": "yasai_curry_moto",
+      "select": { "fatigueOk": ["普通","元気"], "categories": ["肉","野菜"], "pantryStaple": false, "allergens": ["豚肉","小麦","乳","大豆"], "safety": { "rawEgg": false, "rawFish": false, "honey": false, "choking": false, "spicy": true } },
+      "recipe": {
+        "title": "野菜カレー（市販ルウ）", "reason": "多めに作って翌日も使える定番。", "cookTimeMinutes": 25, "washUp": "鍋ひとつ",
+        "childFriendly": true, "childNote": "甘口ルウを選ぶ。辛口にする場合は子ども分を先に取り分ける",
+        "usedIngredients": [{"name":"豚こま","fromFridge":true},{"name":"じゃがいも","fromFridge":true},{"name":"にんじん","fromFridge":true},{"name":"玉ねぎ","fromFridge":true}],
+        "missingIngredients": ["カレールウ"], "steps": ["野菜と肉を炒める","水を加えて煮る","ルウを溶かす"],
+        "tags": ["子ども完食","栄養優先","節約"], "nutritionFocus": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,6509 @@
+{
+  "version": 6,
+  "note": "今日飯 フォールバック献立（69品）。materialsに食材/調味料を量つき(2人分基準)で保持し、人数で表示スケール(食材=人数比/調味料=控えめ)。工程は切り方・火加減・時間中心(分量はmaterialsに集約)。usedIngredients/missingIngredientsはmaterialsから派生(安全判定用)。AI失敗・オフライン・在庫空などで必ず1品出すための内蔵データ。",
+  "allergenNote": "select.allergens は主要28品目に準拠。加工品・調味料は商品により異なるため、最終確認は提案結果画面の材料表示でユーザーに促す（アプリは保証しない）。",
+  "recipes": [
+    {
+      "id": "tsukimi_udon",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "卵"
+        ],
+        "pantryStaple": true,
+        "soloOnly": true,
+        "allergens": [
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": true,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "月見うどん",
+        "reason": "冷凍うどんと卵だけ。鍋ひとつで5分です。",
+        "cookTimeMinutes": 5,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "半熟卵が不安な子には卵をよく火に通してください",
+        "usedIngredients": [
+          {
+            "name": "冷凍うどん",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "鍋に水とめんつゆを入れ中火で温める",
+          "冷凍うどんを加え袋の表示時間（約3分）ゆでる",
+          "丼に移し卵を割り入れる（半熟が不安なら弱火で1〜2分火を通す）"
+        ],
+        "tags": [
+          "時短",
+          "包丁なし",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "冷凍うどん",
+              "qty": 2,
+              "unit": "玉",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 400,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "corn_egg_soup_gohan",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "卵",
+          "野菜"
+        ],
+        "pantryStaple": true,
+        "soloOnly": true,
+        "allergens": [
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "卵とコーンの中華スープごはん",
+        "reason": "鍋ひとつ・5分で温まる一杯です。",
+        "cookTimeMinutes": 5,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "コーン缶",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "中華スープの素"
+        ],
+        "steps": [
+          "鍋に水・中華スープの素・コーンを入れ中火で煮立てる",
+          "溶き卵を細く回し入れ、10秒待ってふんわり固まったら火を止める",
+          "ごはんにかけこしょうをふる"
+        ],
+        "tags": [
+          "時短",
+          "包丁なし",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "コーン缶",
+              "qty": 0.5,
+              "unit": "缶",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "中華スープの素",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "水",
+              "qty": 400,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wiener_yasai_mushi",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": true,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ウインナーと野菜のレンジ蒸し",
+        "reason": "レンジだけ・包丁少なめで子ども好みの味です。",
+        "cookTimeMinutes": 8,
+        "washUp": "耐熱皿ひとつ",
+        "childFriendly": true,
+        "childNote": "ウインナーは縦半分など小さく切ると喉に詰まりにくい",
+        "usedIngredients": [
+          {
+            "name": "ウインナー",
+            "fromFridge": true
+          },
+          {
+            "name": "冷凍野菜",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "塩こしょう"
+        ],
+        "steps": [
+          "耐熱皿にウインナー（縦半分に切る）と冷凍野菜を広げる",
+          "ふんわりラップし600Wで4〜5分加熱する",
+          "塩こしょうをふって混ぜる"
+        ],
+        "tags": [
+          "レンジ併用",
+          "子ども完食",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ウインナー",
+              "qty": 6,
+              "unit": "本",
+              "fromFridge": true
+            },
+            {
+              "name": "冷凍野菜",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rei_mushidori_moyashi",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "レンジ蒸し鶏ともやし",
+        "reason": "レンジだけ・洗い物ほぼゼロで作れます。",
+        "cookTimeMinutes": 8,
+        "washUp": "耐熱皿ひとつ",
+        "childFriendly": true,
+        "childNote": "タレは子どもの分を取り分けてからかける",
+        "usedIngredients": [
+          {
+            "name": "鶏むね肉",
+            "fromFridge": true
+          },
+          {
+            "name": "もやし",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "ポン酢"
+        ],
+        "steps": [
+          "鶏むね肉を5mm厚のそぎ切りにし耐熱皿にもやしと広げる",
+          "酒をふってふんわりラップし600Wで5〜6分加熱する",
+          "水気を切りポン酢をかける（子ども分は先に取り分け）"
+        ],
+        "tags": [
+          "レンジ併用",
+          "包丁なし",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏むね肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "もやし",
+              "qty": 1,
+              "unit": "袋",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "ポン酢",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sake_corn_rei",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "魚",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "さけ",
+          "乳",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鮭とコーンのレンジ蒸し",
+        "reason": "魚不足の日に、レンジで野菜ごと作れます。",
+        "cookTimeMinutes": 9,
+        "washUp": "耐熱皿ひとつ",
+        "childFriendly": true,
+        "childNote": "骨を取り除いてから子どもに",
+        "usedIngredients": [
+          {
+            "name": "生鮭",
+            "fromFridge": true
+          },
+          {
+            "name": "コーン",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "バター"
+        ],
+        "steps": [
+          "耐熱皿に薄切り玉ねぎとコーンを敷き生鮭をのせる",
+          "酒をふってふんわりラップし600Wで5〜6分加熱する",
+          "バターと醤油をのせ余熱で溶かす（骨を取り除いて子どもに）"
+        ],
+        "tags": [
+          "レンジ併用",
+          "栄養優先",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "生鮭",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            },
+            {
+              "name": "コーン",
+              "qty": 3,
+              "unit": "大さじ",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "バター",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "butakoma_tofu_don",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "大豆"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆",
+          "卵",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚こま豆腐丼",
+        "reason": "工程数を最小化した限界モードの定番です。",
+        "cookTimeMinutes": 10,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "子ども用は味付け前に取り分けると安心",
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "豆腐",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "フライパンに油を熱し豚こまを中火で炒める",
+          "豆腐を手で崩して加えめんつゆを回しかけ2分煮る",
+          "溶き卵を回し入れ半熟になったら丼のごはんにのせる"
+        ],
+        "tags": [
+          "今日を乗り切る",
+          "時短",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "豆腐",
+              "qty": 0.5,
+              "unit": "丁",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "niku_udon",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界",
+          "普通"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "小麦",
+          "豚肉",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "肉うどん",
+        "reason": "冷凍うどんと豚肉で温まる一杯です。",
+        "cookTimeMinutes": 9,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "子どもの分は麺を短く切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "冷凍うどん",
+            "fromFridge": true
+          },
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "鍋に水とめんつゆを入れ中火で温める",
+          "豚こまを加えアクを取りながら2〜3分煮る",
+          "冷凍うどんを加え約3分煮て丼に盛る"
+        ],
+        "tags": [
+          "時短",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "冷凍うどん",
+              "qty": 2,
+              "unit": "玉",
+              "fromFridge": true
+            },
+            {
+              "name": "豚こま",
+              "qty": 120,
+              "unit": "g",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 5,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 500,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "atsuage_teriyaki",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界",
+          "普通"
+        ],
+        "categories": [
+          "大豆"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆",
+          "小麦",
+          "ごま"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "厚揚げの照り焼き",
+        "reason": "厚揚げを焼くだけでたんぱく質を補えます。",
+        "cookTimeMinutes": 8,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "厚揚げ",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "焼肉のたれ"
+        ],
+        "steps": [
+          "厚揚げを2cm角に切る",
+          "フライパンに油を熱し中火で両面に焼き色がつくまで4分焼く",
+          "焼肉のたれを絡め汁気が減ったらごはんに添える"
+        ],
+        "tags": [
+          "時短",
+          "節約",
+          "子ども完食"
+        ],
+        "nutritionFocus": "大豆",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "厚揚げ",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "焼肉のたれ",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tuna_egg_chahan",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "魚",
+          "卵"
+        ],
+        "pantryStaple": true,
+        "soloOnly": true,
+        "allergens": [
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ツナと卵のチャーハン",
+        "reason": "ツナ缶と卵で半端野菜も片付きます。",
+        "cookTimeMinutes": 10,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "薄味にすれば子どももそのまま",
+        "usedIngredients": [
+          {
+            "name": "ツナ缶",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "塩こしょう"
+        ],
+        "steps": [
+          "フライパンに油を熱し溶き卵を入れ大きく混ぜ半熟で広げる",
+          "ごはんと油を切ったツナを加え強火で2分炒める",
+          "醤油を鍋肌から回し入れ塩こしょうで味を整える"
+        ],
+        "tags": [
+          "冷蔵庫整理",
+          "子ども完食",
+          "節約"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ツナ缶",
+              "qty": 1,
+              "unit": "缶",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_moyashi_itame",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "大豆",
+          "ごま"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚もやし炒め",
+        "reason": "安い食材だけでごはんが進みます。",
+        "cookTimeMinutes": 10,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "もやし",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "焼肉のたれ"
+        ],
+        "steps": [
+          "フライパンに油を熱し豚こまを中火で炒める",
+          "色が変わったらもやしを加え強火で1〜2分手早く炒める",
+          "焼肉のたれを絡め汁気を飛ばす"
+        ],
+        "tags": [
+          "節約",
+          "時短"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "もやし",
+              "qty": 1,
+              "unit": "袋",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "焼肉のたれ",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chikuwa_piman",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "魚",
+          "野菜"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "小麦",
+          "大豆",
+          "卵",
+          "さば"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ちくわとピーマン炒め",
+        "reason": "練り物で手早く魚介と野菜を一品。",
+        "cookTimeMinutes": 8,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "ピーマンが苦手な子には細かく刻む",
+        "usedIngredients": [
+          {
+            "name": "ちくわ",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "ちくわは1cm斜め切り、ピーマンは細切りにする",
+          "フライパンに油を熱し中火で2〜3分炒める",
+          "めんつゆを回しかけ汁気を飛ばす"
+        ],
+        "tags": [
+          "節約",
+          "冷蔵庫整理",
+          "時短"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ちくわ",
+              "qty": 4,
+              "unit": "本",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 3,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "oyakodon",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "卵"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "親子丼",
+        "reason": "鶏と卵で子どもも食べやすい定番丼です。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "子ども用は卵をしっかり火を通す",
+        "usedIngredients": [
+          {
+            "name": "鶏もも肉",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "鶏ももは一口大、玉ねぎは薄切りにする",
+          "小鍋に水・めんつゆ・玉ねぎを中火で3分、鶏を加え5分煮る",
+          "溶き卵を回し入れ半熟で火を止めごはんにのせる（子ども用はしっかり加熱）"
+        ],
+        "tags": [
+          "子ども完食",
+          "時短"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏もも肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 100,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tuna_wafu_pasta",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "小麦",
+          "大豆",
+          "乳"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ツナの和風パスタ",
+        "reason": "ツナ缶と乾麺だけで作れる手軽な一皿。",
+        "cookTimeMinutes": 12,
+        "washUp": "鍋とフライパン",
+        "childFriendly": true,
+        "childNote": "子ども用は麺を短く切る",
+        "usedIngredients": [
+          {
+            "name": "パスタ",
+            "fromFridge": true
+          },
+          {
+            "name": "ツナ缶",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ",
+          "バター"
+        ],
+        "steps": [
+          "鍋に湯を沸かし塩を入れパスタを表示時間ゆでる",
+          "ボウルにツナ・めんつゆ・バターを入れる",
+          "ゆで汁大さじ2とゆでたパスタを加え手早く和える"
+        ],
+        "tags": [
+          "節約",
+          "子ども完食"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "パスタ",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "ツナ缶",
+              "qty": 1,
+              "unit": "缶",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "バター",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "塩",
+              "qty": 2,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "omurice_kantan",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "卵"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "卵"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "簡単オムライス",
+        "reason": "子どもが完食しやすい定番。元気な日のごほうびに。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "卵はしっかり加熱する",
+        "usedIngredients": [
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "ケチャップ"
+        ],
+        "steps": [
+          "ごはんにケチャップを混ぜ油で1〜2分炒め皿に盛る",
+          "溶き卵に塩を加え油を熱したフライパンで薄焼きにする",
+          "卵でごはんを包みケチャップをかける"
+        ],
+        "tags": [
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "ケチャップ",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "塩",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_shogayaki",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚の生姜焼き",
+        "reason": "定番のスタミナおかず。野菜も添えやすい。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "子ども用は生姜を控えめに",
+        "usedIngredients": [
+          {
+            "name": "豚ロース",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "キャベツ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "生姜焼きのたれ"
+        ],
+        "steps": [
+          "玉ねぎは薄切り、豚ロースは筋を切る",
+          "フライパンに油を熱し豚を中火で両面焼き玉ねぎを加える",
+          "生姜焼きのたれを絡めせん切りキャベツを添える"
+        ],
+        "tags": [
+          "子ども完食",
+          "栄養優先"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚ロース",
+              "qty": 4,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "キャベツ",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "生姜焼きのたれ",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_kimchi",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆",
+          "小麦",
+          "えび"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": true
+        }
+      },
+      "recipe": {
+        "title": "豚キムチ",
+        "reason": "炒めるだけでごはんが進む大人向けの一皿。",
+        "cookTimeMinutes": 10,
+        "washUp": "フライパンひとつ",
+        "childFriendly": false,
+        "childNote": "辛いので子ども分は炒める前に取り分けて味付けを分ける",
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "キムチ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "フライパンに油を熱し豚こまを中火で炒める",
+          "キムチを加えて2分炒める",
+          "醤油で味を整える（子ども分は炒める前に取り分け味付けを分ける）"
+        ],
+        "tags": [
+          "時短",
+          "節約"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "キムチ",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sake_shioyaki",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "さけ",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鮭の塩焼き定食",
+        "reason": "魚が不足している週に。焼くだけで一品。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "骨を取ってほぐすと子どもが食べやすい",
+        "usedIngredients": [
+          {
+            "name": "塩鮭",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "塩鮭をグリルかフライパンで中火、片面3分ずつ焼く",
+          "茶碗にごはんをよそう",
+          "味噌汁を添える（骨を取りほぐすと子どもが食べやすい）"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "塩鮭",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": []
+        }
+      }
+    },
+    {
+      "id": "aji_himono",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "あじの干物定食",
+        "reason": "焼くだけで魚をしっかり補えます。",
+        "cookTimeMinutes": 12,
+        "washUp": "グリルと茶碗",
+        "childFriendly": true,
+        "childNote": "小骨が多いので子どもには取り除いてから。塩分も多め",
+        "usedIngredients": [
+          {
+            "name": "あじの干物",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "大根おろし"
+        ],
+        "steps": [
+          "あじの干物を魚焼きグリルで身側3分・皮側2分焼く",
+          "大根おろしを添える",
+          "ごはんと味噌汁を添える（小骨を取り除いて子どもに）"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "あじの干物",
+              "qty": 2,
+              "unit": "尾",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "大根おろし",
+              "qty": null,
+              "unit": "適量"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rei_nikujaga",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "レンジ肉じゃが",
+        "reason": "煮込まずレンジで作れる定番おかずです。",
+        "cookTimeMinutes": 15,
+        "washUp": "耐熱ボウルひとつ",
+        "childFriendly": true,
+        "childNote": "じゃがいもは小さめに切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "じゃがいも",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "にんじん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "じゃがいも・にんじんは一口大、玉ねぎはくし切りにする",
+          "耐熱ボウルに野菜・豚こま・めんつゆ・水を入れる",
+          "ふんわりラップで600W8分→混ぜて4分加熱し余熱5分で味を含ませる"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 120,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "じゃがいも",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "にんじん",
+              "qty": 0.5,
+              "unit": "本",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 2,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "yasai_curry_moto",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "乳",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": true
+        }
+      },
+      "recipe": {
+        "title": "野菜カレー（市販ルウ）",
+        "reason": "多めに作って翌日も使える定番です。",
+        "cookTimeMinutes": 25,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "甘口ルウを選ぶ。辛口は子ども分を先に取り分ける",
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "じゃがいも",
+            "fromFridge": true
+          },
+          {
+            "name": "にんじん",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "カレールウ"
+        ],
+        "steps": [
+          "野菜と豚こまを一口大に切る",
+          "鍋に油で肉と野菜を炒め水で15分煮る",
+          "火を止めカレールウを溶かし弱火で5分煮る（甘口を選ぶ）"
+        ],
+        "tags": [
+          "子ども完食",
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "じゃがいも",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "にんじん",
+              "qty": 1,
+              "unit": "本",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 1,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "カレールウ",
+              "qty": 2,
+              "unit": "片"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 500,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tori_teriyaki",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏の照り焼き",
+        "reason": "甘辛だれで子どもも食べやすい定番おかずです。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "一口大に切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "鶏もも肉",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "鶏ももは厚みを開いて一口大に切る",
+          "フライパンで皮目から中火6分、返して3分焼き余分な脂を拭く",
+          "醤油・みりん・砂糖を加え煮絡める"
+        ],
+        "tags": [
+          "子ども完食",
+          "栄養優先"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏もも肉",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 2,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_daikon",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚バラ大根",
+        "reason": "大根に味が染みる、ほっとする煮物です。",
+        "cookTimeMinutes": 20,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "大根は小さめに切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "豚バラ",
+            "fromFridge": true
+          },
+          {
+            "name": "大根",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "大根は1.5cmいちょう切り、豚バラは食べやすく切る",
+          "鍋で豚バラを中火で炒め大根を加えて油を回す",
+          "水とめんつゆで落とし蓋をし15分煮る"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚バラ",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "大根",
+              "qty": 0.33,
+              "unit": "本",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 300,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sake_kinoko_foil",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "さけ",
+          "乳"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鮭ときのこのホイル焼き",
+        "reason": "包んで焼くだけ、洗い物も少ない魚料理です。",
+        "cookTimeMinutes": 20,
+        "washUp": "天板のみ",
+        "childFriendly": true,
+        "childNote": "骨を取り除いてから子どもに",
+        "usedIngredients": [
+          {
+            "name": "生鮭",
+            "fromFridge": true
+          },
+          {
+            "name": "きのこ",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "バター",
+          "塩こしょう"
+        ],
+        "steps": [
+          "ホイルに薄切り玉ねぎとほぐしたきのこを敷き生鮭をのせる",
+          "バター・塩こしょう・酒をかけて包む",
+          "トースターか魚焼きグリルで12〜15分焼く（骨を取り除いて子どもに）"
+        ],
+        "tags": [
+          "栄養優先",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "生鮭",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            },
+            {
+              "name": "きのこ",
+              "qty": 1,
+              "unit": "パック",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "バター",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tofu_hamburg",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "大豆",
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆",
+          "鶏肉",
+          "卵",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豆腐ハンバーグ",
+        "reason": "ふんわり柔らかく、子どもが食べやすい主菜です。",
+        "cookTimeMinutes": 20,
+        "washUp": "フライパンとボウル",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豆腐",
+            "fromFridge": true
+          },
+          {
+            "name": "鶏ひき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "パン粉"
+        ],
+        "steps": [
+          "豆腐をキッチンペーパーで水切りする",
+          "ボウルに鶏ひき肉・豆腐・卵・パン粉・塩を混ぜ小判形に成形する",
+          "フライパンで中火、両面3分ずつ焼き蓋をして弱火5分蒸し焼きにする"
+        ],
+        "tags": [
+          "子ども完食",
+          "栄養優先"
+        ],
+        "nutritionFocus": "大豆",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豆腐",
+              "qty": 0.5,
+              "unit": "丁",
+              "fromFridge": true
+            },
+            {
+              "name": "鶏ひき肉",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 1,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "パン粉",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "塩",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tori_soboro_don",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "卵"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏そぼろ丼",
+        "reason": "そぼろと炒り卵をのせるだけ。子ども大好物です。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "鶏ひき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "鍋に鶏ひき肉・醤油・みりん・砂糖を入れ菜箸で混ぜながら中火で炒り煮にする",
+          "別鍋で溶き卵に砂糖少々を加え弱火で炒り卵を作る",
+          "ごはんにそぼろと炒り卵を半分ずつのせる"
+        ],
+        "tags": [
+          "子ども完食",
+          "時短"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏ひき肉",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 2,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "yakiudon",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "小麦",
+          "豚肉",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "焼きうどん",
+        "reason": "冷凍うどんと豚肉・野菜でさっと一皿。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "麺は短く切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "冷凍うどん",
+            "fromFridge": true
+          },
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "キャベツ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "焼きそばソース"
+        ],
+        "steps": [
+          "キャベツはざく切り、豚こまは食べやすく切る",
+          "フライパンで豚を炒めキャベツと解凍うどんを加えて炒める",
+          "焼きそばソースを絡める（麺は短く切ると食べやすい）"
+        ],
+        "tags": [
+          "時短",
+          "冷蔵庫整理",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "冷凍うどん",
+              "qty": 2,
+              "unit": "玉",
+              "fromFridge": true
+            },
+            {
+              "name": "豚こま",
+              "qty": 120,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "キャベツ",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "焼きそばソース",
+              "qty": 3,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buri_teri",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ぶりの照り焼き",
+        "reason": "甘辛だれでごはんが進む魚の主菜です。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "中骨に注意して取り分ける",
+        "usedIngredients": [
+          {
+            "name": "ぶり",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "ぶりは塩をふり5分おき水気を拭く",
+          "フライパンで中火、片面3分ずつ焼き余分な脂を拭く",
+          "醤油・みりん・砂糖を加え煮絡める"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ぶり",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "塩",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tonjiru_teishoku",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜",
+          "大豆"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚汁定食",
+        "reason": "具だくさんで野菜もたんぱく質も一度に摂れます。",
+        "cookTimeMinutes": 20,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "大根",
+            "fromFridge": true
+          },
+          {
+            "name": "にんじん",
+            "fromFridge": true
+          },
+          {
+            "name": "豆腐",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "味噌"
+        ],
+        "steps": [
+          "大根・にんじんは5mmいちょう切り、豚こまは食べやすく切る",
+          "鍋に油で豚と野菜を炒め水とだしで中火10分煮る",
+          "豆腐を加え味噌を溶き入れて火を止める。ごはんを添える"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": "野菜",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 120,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "大根",
+              "qty": 0.25,
+              "unit": "本",
+              "fromFridge": true
+            },
+            {
+              "name": "にんじん",
+              "qty": 0.5,
+              "unit": "本",
+              "fromFridge": true
+            },
+            {
+              "name": "豆腐",
+              "qty": 0.5,
+              "unit": "丁",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "味噌",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "だし",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "油",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "水",
+              "qty": 600,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "torimune_amazu",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏むねの甘酢炒め",
+        "reason": "甘酢でやわらか、安い鶏むねがごちそうに。",
+        "cookTimeMinutes": 18,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "鶏むね肉",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "鶏むねは一口大にし塩こしょうと片栗粉をまぶす。ピーマン・玉ねぎは乱切り",
+          "フライパンで鶏を中火で焼き野菜を加えて炒める",
+          "酢・醤油・砂糖を混ぜて加えとろみが出るまで絡める"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏むね肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "酢",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "片栗粉",
+              "qty": null,
+              "unit": "適量"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_cabbage_miso",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚肉とキャベツの味噌炒め",
+        "reason": "甘味噌だれでキャベツがたっぷり食べられます。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "キャベツ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "味噌"
+        ],
+        "steps": [
+          "キャベツはざく切り、豚こまは食べやすく切る",
+          "フライパンで豚を炒めキャベツを加えしんなりするまで炒める",
+          "味噌・砂糖・酒を混ぜて加え全体に絡める"
+        ],
+        "tags": [
+          "時短",
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "キャベツ",
+              "qty": 0.25,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "味噌",
+              "qty": 1.5,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "koya_tamago",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "大豆",
+          "卵"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "大豆",
+          "卵",
+          "さば"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "高野豆腐の卵とじ",
+        "reason": "常備の高野豆腐でやさしい和の一品。",
+        "cookTimeMinutes": 12,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "高野豆腐",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "だしの素"
+        ],
+        "steps": [
+          "高野豆腐はぬるま湯で戻し水気を絞って一口大に切る",
+          "鍋に水・だし・醤油・みりんで5分含め煮にする",
+          "溶き卵を回し入れ半熟でとじる"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": "大豆",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "高野豆腐",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "だしの素",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 300,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mabo_harusame",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆",
+          "小麦",
+          "ごま"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": true
+        }
+      },
+      "recipe": {
+        "title": "麻婆春雨",
+        "reason": "春雨でボリュームが出る、ごはんに合う一皿。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "甘口の素を選ぶか、辛味を加える前に子ども分を取り分ける",
+        "usedIngredients": [
+          {
+            "name": "ひき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "春雨",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "麻婆春雨の素"
+        ],
+        "steps": [
+          "玉ねぎはみじん切りにする",
+          "フライパンでひき肉と玉ねぎを中火で炒める",
+          "水と素・春雨を加え袋表示どおり煮て汁気を飛ばす（辛味前に子ども分を取り分け）"
+        ],
+        "tags": [
+          "時短",
+          "節約"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ひき肉",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "春雨",
+              "qty": 100,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "麻婆春雨の素",
+              "qty": 1,
+              "unit": "袋"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "saba_misoni",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "さば",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "さばの味噌煮",
+        "reason": "魚不足の日に。缶でも生でも作れる定番。",
+        "cookTimeMinutes": 15,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "中骨に注意して取り分ける",
+        "usedIngredients": [
+          {
+            "name": "さば",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "味噌"
+        ],
+        "steps": [
+          "鍋に水・酒・みりん・砂糖を煮立てる",
+          "さばを皮目を上にして入れ落とし蓋で中火8分煮る",
+          "味噌を煮汁で溶いて加え煮汁をかけながら2分煮含める"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "さば",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "味噌",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 100,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tori_karaage",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏のから揚げ",
+        "reason": "下味をつけて揚げ焼き。家族みんなのごちそう。",
+        "cookTimeMinutes": 25,
+        "washUp": "フライパンとボウル",
+        "childFriendly": true,
+        "childNote": "一口大で食べやすい",
+        "usedIngredients": [
+          {
+            "name": "鶏もも肉",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "鶏ももを一口大に切り醤油・酒・おろし生姜で10分下味",
+          "汁気を拭き片栗粉を全体にまぶす",
+          "フライパンに油を1cm深さで熱し中火で片面3分ずつ揚げ焼きにする"
+        ],
+        "tags": [
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏もも肉",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "おろし生姜",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "片栗粉",
+              "qty": null,
+              "unit": "適量"
+            },
+            {
+              "name": "油",
+              "qty": null,
+              "unit": "適量"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hamburg_homemade",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "牛肉",
+          "豚肉",
+          "卵",
+          "乳",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "手作りハンバーグ",
+        "reason": "こねて焼く定番ごちそう。元気な日に。",
+        "cookTimeMinutes": 25,
+        "washUp": "フライパンとボウル",
+        "childFriendly": true,
+        "childNote": "中までしっかり火を通す",
+        "usedIngredients": [
+          {
+            "name": "合いびき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "パン粉",
+          "牛乳",
+          "塩こしょう"
+        ],
+        "steps": [
+          "玉ねぎはみじん切りにして油で炒め冷ます",
+          "ボウルに合いびき肉・卵・パン粉・牛乳・塩こしょうを入れ粘りが出るまで混ぜ小判形に成形",
+          "フライパンで中火、両面2分ずつ焼き蓋をして弱火6分蒸し焼きにする（中まで火を通す）"
+        ],
+        "tags": [
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "合いびき肉",
+              "qty": 250,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 1,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "パン粉",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "牛乳",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tori_cream_ni",
+      "select": {
+        "fatigueOk": [
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "乳",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏のクリーム煮",
+        "reason": "牛乳でまろやか、子どもが喜ぶ洋風煮込み。",
+        "cookTimeMinutes": 25,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "鶏もも肉",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "きのこ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "牛乳",
+          "バター",
+          "塩こしょう"
+        ],
+        "steps": [
+          "鶏ももは一口大、玉ねぎは薄切り、きのこはほぐす",
+          "鍋にバターで鶏と野菜を中火で炒め薄力粉をふって粉っぽさが消えるまで炒める",
+          "牛乳を少しずつ加え塩こしょうで味を整えとろみがつくまで7分煮る"
+        ],
+        "tags": [
+          "子ども完食",
+          "栄養優先"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏もも肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 1,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "きのこ",
+              "qty": 1,
+              "unit": "パック",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "牛乳",
+              "qty": 300,
+              "unit": "ml"
+            },
+            {
+              "name": "薄力粉",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "バター",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "niku_yasai_itame",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "肉野菜炒め",
+        "reason": "冷蔵庫の野菜と豚肉でバランスよく一皿。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "キャベツ",
+            "fromFridge": true
+          },
+          {
+            "name": "にんじん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "オイスターソース"
+        ],
+        "steps": [
+          "キャベツはざく切り、にんじんは短冊切り、豚こまは食べやすく切る",
+          "フライパンで豚を炒めにんじん・キャベツの順に加え強火で炒める",
+          "オイスターソースと醤油を絡める"
+        ],
+        "tags": [
+          "冷蔵庫整理",
+          "栄養優先",
+          "時短"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "キャベツ",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "にんじん",
+              "qty": 0.33,
+              "unit": "本",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "オイスターソース",
+              "qty": 1.5,
+              "unit": "大さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sake_meuniere",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "さけ",
+          "小麦",
+          "乳"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鮭のムニエル",
+        "reason": "小麦粉をまぶしてバターで焼くだけの洋風魚。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "骨を取り除いてから子どもに",
+        "usedIngredients": [
+          {
+            "name": "生鮭",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "バター",
+          "塩こしょう"
+        ],
+        "steps": [
+          "生鮭は塩こしょうをして5分おき水気を拭いて小麦粉を薄くまぶす",
+          "フライパンにバターを熱し中火で片面3分ずつ焼く",
+          "醤油少々やレモンを添える（骨を取り除いて子どもに）"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "生鮭",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "小麦粉",
+              "qty": null,
+              "unit": "適量"
+            },
+            {
+              "name": "バター",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buri_daikon",
+      "select": {
+        "fatigueOk": [
+          "元気"
+        ],
+        "categories": [
+          "魚",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ぶり大根",
+        "reason": "じっくり煮含めた、ほっとする魚の煮物。",
+        "cookTimeMinutes": 30,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "中骨に注意して取り分ける",
+        "usedIngredients": [
+          {
+            "name": "ぶり",
+            "fromFridge": true
+          },
+          {
+            "name": "大根",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "大根は2cm厚の半月切りにし下茹で5分する",
+          "鍋に水・醤油・みりん・砂糖とぶり・大根を入れる",
+          "落とし蓋で中火20分、煮汁をかけながら味を含ませる"
+        ],
+        "tags": [
+          "栄養優先"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ぶり",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            },
+            {
+              "name": "大根",
+              "qty": 0.33,
+              "unit": "本",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 300,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sawara_teri",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "さわらの照り焼き",
+        "reason": "クセが少なく子どもも食べやすい白身魚。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "骨を確認して取り分ける",
+        "usedIngredients": [
+          {
+            "name": "さわら",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "さわらは塩をふり水気を拭く",
+          "フライパンで中火、片面3分ずつ焼き余分な脂を拭く",
+          "醤油・みりん・砂糖を加え煮絡める"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "さわら",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "塩",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tori_konsai_nimono",
+      "select": {
+        "fatigueOk": [
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏と根菜の煮物",
+        "reason": "根菜たっぷり、作り置きにもなる和の煮物。",
+        "cookTimeMinutes": 30,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "具は小さめに切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "鶏もも肉",
+            "fromFridge": true
+          },
+          {
+            "name": "にんじん",
+            "fromFridge": true
+          },
+          {
+            "name": "じゃがいも",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "鶏ももは一口大、にんじん・じゃがいもは乱切りにする",
+          "鍋に油で鶏と根菜を炒め水とめんつゆを加える",
+          "落とし蓋で中火20分、煮汁が1/3になるまで煮含める"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏もも肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "にんじん",
+              "qty": 1,
+              "unit": "本",
+              "fromFridge": true
+            },
+            {
+              "name": "じゃがいも",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 300,
+              "unit": "ml"
+            },
+            {
+              "name": "油",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "hoikoro",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆",
+          "小麦",
+          "ごま"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": true
+        }
+      },
+      "recipe": {
+        "title": "回鍋肉",
+        "reason": "甘味噌でキャベツがすすむ中華の定番。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "辛味は後入れにし、子ども分は甘味噌だけで取り分ける",
+        "usedIngredients": [
+          {
+            "name": "豚バラ",
+            "fromFridge": true
+          },
+          {
+            "name": "キャベツ",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "回鍋肉の素"
+        ],
+        "steps": [
+          "キャベツはざく切り、ピーマンは乱切り、豚バラは食べやすく切る",
+          "フライパンで豚バラを炒め野菜を加え強火で炒める",
+          "回鍋肉の素を加えて絡める（辛味は後入れ、子ども分は先に取り分け）"
+        ],
+        "tags": [
+          "栄養優先",
+          "時短"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚バラ",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "キャベツ",
+              "qty": 0.25,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "回鍋肉の素",
+              "qty": 1,
+              "unit": "袋"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chinjao",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "大豆",
+          "小麦",
+          "ごま"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "青椒肉絲",
+        "reason": "ピーマンと肉を細切りで炒める中華おかず。",
+        "cookTimeMinutes": 18,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "細切りで食べやすい",
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "青椒肉絲の素"
+        ],
+        "steps": [
+          "ピーマンと豚こまを細切りにする",
+          "フライパンで豚を炒めピーマンを加え強火で1分炒める",
+          "青椒肉絲の素を加えて手早く絡める"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 3,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "青椒肉絲の素",
+              "qty": 1,
+              "unit": "袋"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_don",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚丼",
+        "reason": "甘辛だれの豚をのせるだけ。手早く満足。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "玉ねぎは薄切りにする",
+          "鍋に水・醤油・みりん・砂糖と玉ねぎを煮立て豚こまを加え3分煮る",
+          "煮汁ごとごはんにのせる"
+        ],
+        "tags": [
+          "時短",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "水",
+              "qty": 50,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gyu_don",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "牛肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "牛丼",
+        "reason": "牛こまと玉ねぎを甘辛く煮るだけの定番丼。",
+        "cookTimeMinutes": 12,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "牛肉",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "玉ねぎは薄切りにする",
+          "鍋に水・めんつゆ・砂糖と玉ねぎを中火で3分煮る",
+          "牛肉を加えアクを取りながら3分煮てごはんにのせる"
+        ],
+        "tags": [
+          "時短",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "牛肉",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 4,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "水",
+              "qty": 100,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "torimune_terimayo",
+      "select": {
+        "fatigueOk": [
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "卵"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏むねの照りマヨ",
+        "reason": "甘辛＋マヨで子どもが喜ぶ鶏むね料理。",
+        "cookTimeMinutes": 18,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "鶏むね肉",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "マヨネーズ"
+        ],
+        "steps": [
+          "鶏むねはそぎ切りにし塩こしょうと片栗粉をまぶす",
+          "フライパンで中火、両面3分ずつ焼く",
+          "醤油・みりん・砂糖を絡め仕上げにマヨネーズをかける"
+        ],
+        "tags": [
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏むね肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "マヨネーズ",
+              "qty": null,
+              "unit": "適量"
+            },
+            {
+              "name": "片栗粉",
+              "qty": null,
+              "unit": "適量"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "saba_shioyaki",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "さば",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "さばの塩焼き",
+        "reason": "焼くだけで魚を補える、シンプルな定食。",
+        "cookTimeMinutes": 12,
+        "washUp": "グリルと茶碗",
+        "childFriendly": true,
+        "childNote": "小骨を取り除いてから子どもに",
+        "usedIngredients": [
+          {
+            "name": "さば",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "さばに塩をふり10分おいて水気を拭く",
+          "グリルで皮目から中火、片面4分ずつ焼く",
+          "ごはんと味噌汁を添える（小骨を取り除いて子どもに）"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "さば",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "塩",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tori_broccoli",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏とブロッコリーの塩炒め",
+        "reason": "鶏とブロッコリーをシンプルに塩で炒めて。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "ブロッコリーは小房を小さめに",
+        "usedIngredients": [
+          {
+            "name": "鶏もも肉",
+            "fromFridge": true
+          },
+          {
+            "name": "ブロッコリー",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "塩こしょう"
+        ],
+        "steps": [
+          "鶏ももは一口大、ブロッコリーは小房に分け下茹で2分する",
+          "フライパンで鶏を中火で5分焼く",
+          "ブロッコリーを加え塩こしょうと酒で炒め合わせる"
+        ],
+        "tags": [
+          "栄養優先",
+          "時短"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏もも肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "ブロッコリー",
+              "qty": 1,
+              "unit": "株",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_hakusai",
+      "select": {
+        "fatigueOk": [
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "さば",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚バラ白菜のミルフィーユ煮",
+        "reason": "重ねて煮るだけ、白菜が甘くなる鍋風煮物。",
+        "cookTimeMinutes": 25,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豚バラ",
+            "fromFridge": true
+          },
+          {
+            "name": "白菜",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "だしの素"
+        ],
+        "steps": [
+          "白菜と豚バラを交互に重ね5cm幅に切り鍋に立てて詰める",
+          "水・だし・酒を注ぐ",
+          "蓋をして中火12〜15分、白菜が柔らかくなるまで煮る"
+        ],
+        "tags": [
+          "栄養優先",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": "野菜",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚バラ",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "白菜",
+              "qty": 0.25,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "だしの素",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 200,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "toridofu_soboro",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "大豆"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "大豆",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏ひき肉と豆腐のそぼろ煮",
+        "reason": "やさしい味で、たんぱく質をしっかり補えます。",
+        "cookTimeMinutes": 12,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "鶏ひき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "豆腐",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "鍋に鶏ひき肉を入れ菜箸でほぐしながら中火で炒める",
+          "豆腐を崩して加え水・醤油・みりんで5分煮る",
+          "水溶き片栗粉でとろみをつける"
+        ],
+        "tags": [
+          "栄養優先",
+          "時短",
+          "節約"
+        ],
+        "nutritionFocus": "大豆",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏ひき肉",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "豆腐",
+              "qty": 1,
+              "unit": "丁",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "片栗粉",
+              "qty": null,
+              "unit": "適量"
+            },
+            {
+              "name": "水",
+              "qty": 100,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_egg_oyster",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "肉",
+          "卵",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "卵",
+          "大豆",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "卵と豚肉のオイスター炒め",
+        "reason": "ふわ卵と豚肉でごはんが進む中華炒め。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "オイスターソース"
+        ],
+        "steps": [
+          "玉ねぎは薄切り。溶き卵を油で半熟に炒めて取り出す",
+          "豚こまと玉ねぎを中火で炒める",
+          "卵を戻しオイスターソースと醤油で味付け"
+        ],
+        "tags": [
+          "冷蔵庫整理",
+          "時短",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "オイスターソース",
+              "qty": 1.5,
+              "unit": "大さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "buta_moyashi_rei",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚バラもやしのレンジ蒸し",
+        "reason": "重ねてチンするだけ。限界の日でも肉と野菜が一度に。",
+        "cookTimeMinutes": 8,
+        "washUp": "耐熱皿ひとつ",
+        "childFriendly": true,
+        "childNote": "タレは子どもの分を取り分けてから",
+        "usedIngredients": [
+          {
+            "name": "豚バラ",
+            "fromFridge": true
+          },
+          {
+            "name": "もやし",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "ポン酢"
+        ],
+        "steps": [
+          "耐熱皿にもやしを広げ豚バラを重ねてのせる",
+          "酒をふってふんわりラップし600Wで5分加熱する",
+          "水気を切りポン酢をかける（子ども分は先に取り分け）"
+        ],
+        "tags": [
+          "レンジ併用",
+          "時短",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚バラ",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "もやし",
+              "qty": 1,
+              "unit": "袋",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "ポン酢",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "butakoma_piman_rei",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豚こまとピーマンのレンジ蒸し",
+        "reason": "切ってチンするだけ。ピーマンも肉でぺろり。",
+        "cookTimeMinutes": 8,
+        "washUp": "耐熱皿ひとつ",
+        "childFriendly": true,
+        "childNote": "ピーマンが苦手な子には細かく刻む",
+        "usedIngredients": [
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "焼肉のたれ"
+        ],
+        "steps": [
+          "ピーマンは細切りにし耐熱皿に豚こまと広げる",
+          "ふんわりラップして600Wで4〜5分加熱する",
+          "焼肉のたれを絡める"
+        ],
+        "tags": [
+          "レンジ併用",
+          "時短",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 3,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "焼肉のたれ",
+              "qty": 2,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "torimune_cabbage_rei",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏むねとキャベツのレンジ蒸し",
+        "reason": "安い鶏むねとキャベツをチンするだけのヘルシー一品。",
+        "cookTimeMinutes": 9,
+        "washUp": "耐熱皿ひとつ",
+        "childFriendly": true,
+        "childNote": "鶏むねは薄めに切ると固くなりにくい",
+        "usedIngredients": [
+          {
+            "name": "鶏むね肉",
+            "fromFridge": true
+          },
+          {
+            "name": "キャベツ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "ポン酢"
+        ],
+        "steps": [
+          "鶏むねは5mmそぎ切り、キャベツはざく切りにする",
+          "耐熱皿に広げ酒をふりふんわりラップで600W6分加熱する",
+          "水気を切りポン酢をかける"
+        ],
+        "tags": [
+          "レンジ併用",
+          "時短",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏むね肉",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "キャベツ",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "ポン酢",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sabacan_tamago_don",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "魚",
+          "卵"
+        ],
+        "pantryStaple": true,
+        "allergens": [
+          "さば",
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "さば缶の卵とじ丼",
+        "reason": "缶を開けて卵でとじるだけ。魚も手早く補えます。",
+        "cookTimeMinutes": 8,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "卵はしっかり火を通す",
+        "usedIngredients": [
+          {
+            "name": "さば缶",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "めんつゆ"
+        ],
+        "steps": [
+          "玉ねぎは薄切りにする",
+          "フライパンに水・めんつゆ・玉ねぎ・さば缶（汁ごと）を入れ中火で3分煮る",
+          "溶き卵を回し入れ半熟で火を止めごはんにのせる（卵はしっかり加熱）"
+        ],
+        "tags": [
+          "時短",
+          "子ども完食",
+          "節約"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "さば缶",
+              "qty": 1,
+              "unit": "缶",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "めんつゆ",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 50,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tamago_zosui",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "限界"
+        ],
+        "categories": [
+          "卵"
+        ],
+        "pantryStaple": true,
+        "soloOnly": true,
+        "allergens": [
+          "卵",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "卵雑炊",
+        "reason": "ごはんと卵を煮るだけ。胃にやさしく限界の日に。",
+        "cookTimeMinutes": 8,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "熱いので冷ましてから子どもに",
+        "usedIngredients": [
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "だしの素"
+        ],
+        "steps": [
+          "鍋に水・だし・醤油とごはんを入れ中火で3分煮る",
+          "溶き卵を回し入れる",
+          "ふたをして30秒蒸らす（熱いので冷ましてから子どもに）"
+        ],
+        "tags": [
+          "時短",
+          "包丁なし",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ごはん",
+              "qty": 1,
+              "unit": "杯",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "だしの素",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "水",
+              "qty": 400,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mabo_atsuage",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "大豆",
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆",
+          "豚肉",
+          "小麦",
+          "ごま"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": true
+        }
+      },
+      "recipe": {
+        "title": "麻婆厚揚げ",
+        "reason": "厚揚げでボリューム満点。ごはんが進む大豆おかず。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "甘口の素を選ぶか、辛味を入れる前に子ども分を取り分ける",
+        "usedIngredients": [
+          {
+            "name": "厚揚げ",
+            "fromFridge": true
+          },
+          {
+            "name": "ひき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "麻婆豆腐の素"
+        ],
+        "steps": [
+          "厚揚げは2cm角、玉ねぎはみじん切りにする",
+          "フライパンでひき肉と玉ねぎを中火で炒める",
+          "素と厚揚げを加え3分煮て水溶き片栗粉でとろみをつける（甘口推奨／辛味前に子ども分取り分け）"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": "大豆",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "厚揚げ",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "ひき肉",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "麻婆豆腐の素",
+              "qty": 1,
+              "unit": "箱"
+            },
+            {
+              "name": "片栗粉",
+              "qty": null,
+              "unit": "適量"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tofu_champuru",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "大豆",
+          "卵",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆",
+          "卵",
+          "豚肉",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "豆腐チャンプルー",
+        "reason": "豆腐・卵・野菜を炒め合わせる栄養満点の一皿。",
+        "cookTimeMinutes": 15,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "豆腐",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "もやし",
+            "fromFridge": true
+          },
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "鶏ガラスープの素"
+        ],
+        "steps": [
+          "豆腐は水切りし大きめにちぎりフライパンで焼き色をつけ取り出す",
+          "豚こまともやしを炒め豆腐を戻す",
+          "鶏ガラと醤油で味付けし溶き卵を回し入れて炒める"
+        ],
+        "tags": [
+          "栄養優先",
+          "冷蔵庫整理"
+        ],
+        "nutritionFocus": "大豆",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "豆腐",
+              "qty": 0.5,
+              "unit": "丁",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "もやし",
+              "qty": 1,
+              "unit": "袋",
+              "fromFridge": true
+            },
+            {
+              "name": "豚こま",
+              "qty": 120,
+              "unit": "g",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "鶏ガラスープの素",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "aburaage_komatsuna",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "大豆",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆",
+          "さば"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "油揚げと小松菜の煮浸し",
+        "reason": "だしを含ませるだけのやさしい和の副菜兼主菜。",
+        "cookTimeMinutes": 10,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "油揚げ",
+            "fromFridge": true
+          },
+          {
+            "name": "小松菜",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "だしの素"
+        ],
+        "steps": [
+          "小松菜は4cm長さ、油揚げは短冊に切る",
+          "鍋に水・だし・醤油・みりんで油揚げを2分煮る",
+          "小松菜を加えしんなりしたら火を止め味を含ませる"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約",
+          "時短"
+        ],
+        "nutritionFocus": "野菜",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "油揚げ",
+              "qty": 1,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "小松菜",
+              "qty": 1,
+              "unit": "束",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "だしの素",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "みりん",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 200,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "atsuage_buta_oyster",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "大豆",
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆",
+          "豚肉",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "厚揚げと豚こまのオイスター炒め",
+        "reason": "厚揚げでかさ増し、こってり味でごはんが進みます。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": null,
+        "usedIngredients": [
+          {
+            "name": "厚揚げ",
+            "fromFridge": true
+          },
+          {
+            "name": "豚こま",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "オイスターソース"
+        ],
+        "steps": [
+          "厚揚げは一口大、ピーマンは乱切りにする",
+          "フライパンで豚こまを炒め厚揚げとピーマンを加えて炒める",
+          "オイスターソースと醤油を絡める"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約",
+          "時短"
+        ],
+        "nutritionFocus": "大豆",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "厚揚げ",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "豚こま",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "オイスターソース",
+              "qty": 1.5,
+              "unit": "大さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tara_foil",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "乳",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "たらのホイル蒸し",
+        "reason": "包んで蒸すだけ、淡白なたらと野菜のヘルシー魚料理。",
+        "cookTimeMinutes": 18,
+        "washUp": "天板のみ",
+        "childFriendly": true,
+        "childNote": "骨を取り除いてから子どもに",
+        "usedIngredients": [
+          {
+            "name": "たら",
+            "fromFridge": true
+          },
+          {
+            "name": "きのこ",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "バター",
+          "ポン酢",
+          "塩こしょう"
+        ],
+        "steps": [
+          "ホイルに薄切り玉ねぎとほぐしたきのこを敷きたらをのせる",
+          "バター・塩こしょう・酒をかけて包む",
+          "トースターかグリルで12〜15分蒸し焼きにしポン酢をかける（骨を取り除いて子どもに）"
+        ],
+        "tags": [
+          "栄養優先",
+          "洗い物少なめ"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "たら",
+              "qty": 2,
+              "unit": "切れ",
+              "fromFridge": true
+            },
+            {
+              "name": "きのこ",
+              "qty": 1,
+              "unit": "パック",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "バター",
+              "qty": 10,
+              "unit": "g"
+            },
+            {
+              "name": "ポン酢",
+              "qty": null,
+              "unit": "適量"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "酒",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sanma_shioyaki",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "さんまの塩焼き定食",
+        "reason": "焼くだけで旬の魚をしっかり補える定番定食。",
+        "cookTimeMinutes": 15,
+        "washUp": "グリルと茶碗",
+        "childFriendly": true,
+        "childNote": "小骨が多いので取り除いてから子どもに",
+        "usedIngredients": [
+          {
+            "name": "さんま",
+            "fromFridge": true
+          },
+          {
+            "name": "ごはん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "大根おろし"
+        ],
+        "steps": [
+          "さんまは塩をふり10分おいて水気を拭く",
+          "グリルで中火、片面5分ずつ焼く",
+          "大根おろしとごはん・味噌汁を添える（小骨を取り除いて子どもに）"
+        ],
+        "tags": [
+          "栄養優先",
+          "節約"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "さんま",
+              "qty": 2,
+              "unit": "尾",
+              "fromFridge": true
+            },
+            {
+              "name": "ごはん",
+              "qty": 2,
+              "unit": "杯",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "塩",
+              "qty": 0.5,
+              "unit": "小さじ"
+            },
+            {
+              "name": "大根おろし",
+              "qty": null,
+              "unit": "適量"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ebi_tamago_itame",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚",
+          "卵"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "えび",
+          "卵",
+          "大豆",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "えびと卵の炒め",
+        "reason": "ぷりぷりえびとふわ卵の、見栄えする中華炒め。",
+        "cookTimeMinutes": 12,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "えびは小さく切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "えび",
+            "fromFridge": true
+          },
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "鶏ガラスープの素",
+          "塩こしょう"
+        ],
+        "steps": [
+          "えびは背わたを取り、玉ねぎは薄切り。溶き卵を油で半熟に炒め取り出す",
+          "えびと玉ねぎを中火で炒めえびの色が変わるまで2分",
+          "卵を戻し鶏ガラと塩こしょうで味付け（えびは小さく切ると食べやすい）"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "えび",
+              "qty": 150,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "卵",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "鶏ガラスープの素",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "asari_sakamushi",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "魚"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "あさりの酒蒸し",
+        "reason": "あさりを酒で蒸すだけ。うま味たっぷりの一品。",
+        "cookTimeMinutes": 10,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "殻に注意して身を外してから子どもに。砂抜きを忘れずに",
+        "usedIngredients": [
+          {
+            "name": "あさり",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [],
+        "steps": [
+          "あさりは塩水で30分砂抜きし殻をこすり洗いする",
+          "フライパンにあさりと酒を入れ蓋をして強めの中火で蒸す",
+          "口が開いたら醤油をたらして火を止める（殻に注意し身を外して子どもに）"
+        ],
+        "tags": [
+          "時短",
+          "栄養優先"
+        ],
+        "nutritionFocus": "魚",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "あさり",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "酒",
+              "qty": 3,
+              "unit": "大さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "napolitan",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "小麦",
+          "豚肉",
+          "乳"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ナポリタン",
+        "reason": "ケチャップ味で子どもが大好きな喫茶店パスタ。",
+        "cookTimeMinutes": 18,
+        "washUp": "鍋とフライパン",
+        "childFriendly": true,
+        "childNote": "麺は短く切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "パスタ",
+            "fromFridge": true
+          },
+          {
+            "name": "ウインナー",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "ケチャップ",
+          "塩こしょう"
+        ],
+        "steps": [
+          "パスタを塩ゆでする。玉ねぎ・ピーマン・ウインナーは薄切りにする",
+          "フライパンに油で具を炒めケチャップを加え酸味を飛ばす",
+          "ゆでたパスタを加え塩こしょうで味を整える（麺は短く切ると食べやすい）"
+        ],
+        "tags": [
+          "子ども完食",
+          "冷蔵庫整理"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "パスタ",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "ウインナー",
+              "qty": 4,
+              "unit": "本",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "ケチャップ",
+              "qty": 5,
+              "unit": "大さじ"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "meat_sauce_pasta",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "小麦",
+          "牛肉",
+          "豚肉",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "ミートソースパスタ",
+        "reason": "ひき肉のうま味たっぷり、子どもが喜ぶ定番パスタ。",
+        "cookTimeMinutes": 20,
+        "washUp": "鍋とフライパン",
+        "childFriendly": true,
+        "childNote": "麺は短く切ると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "合いびき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "パスタ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "トマト缶",
+          "ケチャップ",
+          "塩こしょう"
+        ],
+        "steps": [
+          "玉ねぎはみじん切り。パスタを塩ゆでする",
+          "フライパンで合いびき肉と玉ねぎを炒めトマト缶・ケチャップ・塩こしょうで10分煮る",
+          "ゆでたパスタにソースをかける（麺は短く切ると食べやすい）"
+        ],
+        "tags": [
+          "子ども完食",
+          "栄養優先"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "合いびき肉",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "パスタ",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "トマト缶",
+              "qty": 0.5,
+              "unit": "缶"
+            },
+            {
+              "name": "ケチャップ",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "toridango_soup",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "鶏肉",
+          "大豆",
+          "小麦"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "鶏団子のスープ",
+        "reason": "ふわふわ鶏団子と野菜の、体が温まる汁物主菜。",
+        "cookTimeMinutes": 20,
+        "washUp": "鍋ひとつ",
+        "childFriendly": true,
+        "childNote": "団子は小さめに丸めると食べやすい",
+        "usedIngredients": [
+          {
+            "name": "鶏ひき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "白菜",
+            "fromFridge": true
+          },
+          {
+            "name": "にんじん",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "鶏ガラスープの素"
+        ],
+        "steps": [
+          "鶏ひき肉に塩と片栗粉を混ぜる。白菜はざく切り、にんじんは薄切り",
+          "鍋に水と鶏ガラを煮立て鶏ひき肉をスプーンで一口大に落とす",
+          "野菜を加え団子が浮いて火が通るまで8分煮て醤油で味を整える"
+        ],
+        "tags": [
+          "栄養優先",
+          "子ども完食"
+        ],
+        "nutritionFocus": "野菜",
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "鶏ひき肉",
+              "qty": 200,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "白菜",
+              "qty": 2,
+              "unit": "枚",
+              "fromFridge": true
+            },
+            {
+              "name": "にんじん",
+              "qty": 0.33,
+              "unit": "本",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "鶏ガラスープの素",
+              "qty": 2,
+              "unit": "小さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "片栗粉",
+              "qty": 1,
+              "unit": "小さじ"
+            },
+            {
+              "name": "水",
+              "qty": 600,
+              "unit": "ml"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cheese_omelet",
+      "select": {
+        "fatigueOk": [
+          "疲れた",
+          "普通"
+        ],
+        "categories": [
+          "卵"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "卵",
+          "乳"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "チーズオムレツ",
+        "reason": "卵とチーズを焼くだけ。子どもが喜ぶ手早い一品。",
+        "cookTimeMinutes": 8,
+        "washUp": "フライパンひとつ",
+        "childFriendly": true,
+        "childNote": "中までしっかり火を通す",
+        "usedIngredients": [
+          {
+            "name": "卵",
+            "fromFridge": true
+          },
+          {
+            "name": "チーズ",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "塩こしょう"
+        ],
+        "steps": [
+          "卵に塩こしょうを加えて溶く",
+          "フライパンに油を熱し卵を流し大きく混ぜ半熟になったらチーズをのせる",
+          "半分に折り弱火で1分焼いて中まで火を通す"
+        ],
+        "tags": [
+          "時短",
+          "子ども完食"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "卵",
+              "qty": 3,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "チーズ",
+              "qty": 40,
+              "unit": "g",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "塩こしょう",
+              "qty": null,
+              "unit": "少々"
+            },
+            {
+              "name": "油",
+              "qty": 1,
+              "unit": "小さじ"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nikudango_amazu",
+      "select": {
+        "fatigueOk": [
+          "普通",
+          "元気"
+        ],
+        "categories": [
+          "肉",
+          "野菜"
+        ],
+        "pantryStaple": false,
+        "allergens": [
+          "豚肉",
+          "卵",
+          "小麦",
+          "大豆"
+        ],
+        "safety": {
+          "rawEgg": false,
+          "rawFish": false,
+          "honey": false,
+          "choking": false,
+          "spicy": false
+        }
+      },
+      "recipe": {
+        "title": "肉だんごの甘酢あん",
+        "reason": "甘酸っぱいあんで子どもが完食する人気おかず。",
+        "cookTimeMinutes": 22,
+        "washUp": "フライパンとボウル",
+        "childFriendly": true,
+        "childNote": "一口大で食べやすい",
+        "usedIngredients": [
+          {
+            "name": "ひき肉",
+            "fromFridge": true
+          },
+          {
+            "name": "玉ねぎ",
+            "fromFridge": true
+          },
+          {
+            "name": "ピーマン",
+            "fromFridge": true
+          }
+        ],
+        "missingIngredients": [
+          "ケチャップ"
+        ],
+        "steps": [
+          "ひき肉に塩こしょう・片栗粉を混ぜ一口大に丸める。玉ねぎ・ピーマンは乱切り",
+          "フライパンに油で肉団子を転がしながら中火で5分焼き野菜を加えて炒める",
+          "酢・ケチャップ・醤油・砂糖・水を混ぜて加えとろみが出るまで絡める"
+        ],
+        "tags": [
+          "子ども完食",
+          "栄養優先"
+        ],
+        "nutritionFocus": null,
+        "materials": {
+          "servings": 2,
+          "food": [
+            {
+              "name": "ひき肉",
+              "qty": 250,
+              "unit": "g",
+              "fromFridge": true
+            },
+            {
+              "name": "玉ねぎ",
+              "qty": 0.5,
+              "unit": "個",
+              "fromFridge": true
+            },
+            {
+              "name": "ピーマン",
+              "qty": 2,
+              "unit": "個",
+              "fromFridge": true
+            }
+          ],
+          "seasoning": [
+            {
+              "name": "酢",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "ケチャップ",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "醤油",
+              "qty": 2,
+              "unit": "大さじ"
+            },
+            {
+              "name": "砂糖",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "片栗粉",
+              "qty": 1,
+              "unit": "大さじ"
+            },
+            {
+              "name": "水",
+              "qty": 2,
+              "unit": "大さじ"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

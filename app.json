@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "今日飯",
+    "slug": "konya-meshi",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "description": "疲れている日の夕飯を、家族の安全条件と冷蔵庫の中身からすばやく決めるアプリです。",
+    "primaryColor": "#3E7D5A",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FCFBF7"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kyoumeshi.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSCameraUsageDescription": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。",
+        "NSPhotoLibraryUsageDescription": "冷蔵庫やレシートの写真から食材を読み取るために使用します。"
+      }
+    },
+    "android": {
+      "package": "com.kyoumeshi.app",
+      "versionCode": 1,
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#3E7D5A"
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-asset",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "冷蔵庫やレシートの写真から食材を読み取るために使用します。",
+          "cameraPermission": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "718a4402-d0c5-468c-840d-e2c6be24fe6a"
+      }
+    }
+  }
+}

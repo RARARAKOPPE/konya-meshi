@@ -14,10 +14,9 @@ function rowFrom(it: ExtractedItem): Row {
   return { name: it.name, category: it.category, amount: it.amount ?? null };
 }
 
-// 卵=個数 / 米=kg は数量を入れられるようにする
+// 卵だけ個数を入れられるようにする（残量管理の対象がこれだけのため）
 function needsAmount(name: string): boolean {
-  const c = classify(name).canonical;
-  return c === '卵' || c === '米';
+  return classify(name).canonical === '卵';
 }
 
 export function ExtractReviewScreen({

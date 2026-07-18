@@ -15,12 +15,13 @@
       "backgroundColor": "#FCFBF7"
     },
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.kyoumeshi.app",
-      "buildNumber": "1",
+      "buildNumber": "3",
       "infoPlist": {
         "NSCameraUsageDescription": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。",
-        "NSPhotoLibraryUsageDescription": "冷蔵庫やレシートの写真から食材を読み取るために使用します。"
+        "NSPhotoLibraryUsageDescription": "冷蔵庫やレシートの写真から食材を読み取るために使用します。",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -47,6 +48,20 @@
         {
           "photosPermission": "冷蔵庫やレシートの写真から食材を読み取るために使用します。",
           "cameraPermission": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。"
+        }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-4221751682881809~4198812026",
+          "delayAppMeasurementInit": true
+        }
+      ],
+      [
+        "expo-tracking-transparency",
+        {
+          "userTrackingPermission": "この端末での広告表示に使います。オフにしても広告自体は表示されます（内容が最適化されないだけです）。"
         }
       ]
     ],

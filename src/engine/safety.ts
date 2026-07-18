@@ -20,6 +20,7 @@ export function resolveSafetyProfile(members: Member[]): SafetyProfile {
     noUnpasteurized: false,
     noAlcohol: false,
     chokingCut: false,
+    noSpicy: false,
     hasChild: false,
     hasPregnant: false,
     hasInfant: false,
@@ -63,6 +64,7 @@ export function resolveSafetyProfile(members: Member[]): SafetyProfile {
     if (m.kind === 'child') {
       p.hasChild = true;
       p.noAlcohol = true;
+      p.noSpicy = true; // 年齢不問。辛さは切り方で緩和できないためchokingCutと違いハードブロック
       const age = m.childAge ?? 0;
       if (age <= INFANT_MAX_AGE) {
         p.hasInfant = true;
@@ -139,6 +141,7 @@ export function recipeBlockedBy(entry: FallbackEntry, p: SafetyProfile): BlockRe
   if (p.noRawEgg && s.rawEgg) return { blocked: true, needsConfirm: false };
   if (p.noRawFish && s.rawFish) return { blocked: true, needsConfirm: false };
   if (p.noHoney && s.honey) return { blocked: true, needsConfirm: false };
+  if (p.noSpicy && s.spicy) return { blocked: true, needsConfirm: false };
 
   return { blocked: false, needsConfirm };
 }

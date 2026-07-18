@@ -1,9 +1,11 @@
 import React from 'react';
+import { Image } from 'react-native';
 import Svg, { Circle, Ellipse, G, Line, Path, Rect } from 'react-native-svg';
 import { classify } from '../engine/classify';
+import { ingredientImageSource } from '../engine/ingredientImage';
 
-// 食材アイコン。有名どころは専用、無名はカテゴリ標準アイコンを名前ハッシュで固定割り当て
-// （同じ食材は毎回同じ絵になる）。全てコードで描画＝画像素材・ライセンス不要。
+// 食材アイコン。イラスト素材がある定番食材は水彩イラスト、それ以外はコード描画SVGにフォールバック
+// （同じ食材は毎回同じ絵になる）。
 
 function hashStr(s: string): number {
   let h = 0;
@@ -643,6 +645,12 @@ function Shape({ k, color }: { k: Key; color?: string }) {
 }
 
 export function FoodIcon({ name, size = 32 }: { name: string; size?: number }) {
+  const canonical = classify(name).canonical ?? name;
+  // 生名を先に見る：辞書がcanonicalへ統合してしまう食材（えのき/しめじ→きのこ 等）でも個別画像を出すため
+  const illustration = ingredientImageSource(name) ?? ingredientImageSource(canonical);
+  if (illustration) {
+    return <Image source={illustration} style={{ width: size, height: size }} resizeMode="contain" />;
+  }
   const { key, color } = resolve(name);
   return (
     <Svg width={size} height={size} viewBox="0 0 40 40">

@@ -2829,7 +2829,8 @@
         "allergens": [
           "大豆",
           "卵",
-          "さば"
+          "さば",
+          "小麦"
         ],
         "safety": {
           "rawEgg": false,
@@ -3504,7 +3505,8 @@
         "allergens": [
           "さけ",
           "小麦",
-          "乳"
+          "乳",
+          "大豆"
         ],
         "safety": {
           "rawEgg": false,
@@ -5144,7 +5146,8 @@
         "soloOnly": true,
         "allergens": [
           "卵",
-          "大豆"
+          "大豆",
+          "小麦"
         ],
         "safety": {
           "rawEgg": false,
@@ -5440,7 +5443,8 @@
         "pantryStaple": false,
         "allergens": [
           "大豆",
-          "さば"
+          "さば",
+          "小麦"
         ],
         "safety": {
           "rawEgg": false,
@@ -5924,7 +5928,8 @@
         ],
         "pantryStaple": false,
         "allergens": [
-          "大豆"
+          "大豆",
+          "小麦"
         ],
         "safety": {
           "rawEgg": false,

@@ -58,7 +58,10 @@ export interface FallbackEntry {
 
 // 冷蔵庫の食材（設計書 §6）
 export type Amount = 'enough' | 'low' | 'empty';
-// 残量管理つきの食材（卵=個数 / 米=kg）。unitがある食材だけ残量UIを出す。
+// 残量管理つきの食材。unitがある食材だけ残量UIを出す。
+// 現状 'count'（卵）のみを新規付与する。'kg' は米用だったが、レシピが消費するのは「ごはん◯杯」で
+// 冷蔵庫の kg と単位が繋がらないため廃止した（辞書も「米」を「ごはん」の別名へ統合済み）。
+// 既存端末に unit:'kg' のデータが残っている可能性があるため、型と表示処理は残してある。
 export type QtyUnit = 'count' | 'kg';
 export interface Ingredient {
   id: string;
@@ -111,6 +114,7 @@ export interface SafetyProfile {
   noUnpasteurized: boolean;
   noAlcohol: boolean;
   chokingCut: boolean;
+  noSpicy: boolean; // 子ども（年齢不問）が食べる時は辛い物を除外（辛さは切り方で緩和できないため choking と違いハードブロック）
   hasChild: boolean;
   hasPregnant: boolean;
   hasInfant: boolean;

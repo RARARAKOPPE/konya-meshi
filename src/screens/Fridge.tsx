@@ -34,6 +34,7 @@ export function FridgeScreen({
   onScanPhoto,
   onScanReceipt,
   scanning,
+  scanAvailable,
   onBack,
 }: {
   fridge: Ingredient[];
@@ -45,6 +46,7 @@ export function FridgeScreen({
   onScanPhoto: () => void;
   onScanReceipt: () => void;
   scanning: boolean;
+  scanAvailable: boolean; // バックエンド(/extract)未設定なら読み取りUI自体を出さない
   onBack: () => void;
 }) {
   const [name, setName] = useState('');
@@ -114,14 +116,17 @@ export function FridgeScreen({
 
         <Text style={s.sub}>食材をタップすると「まな板（今日使いたい）」に置けます</Text>
 
-        <View style={s.scanRow}>
-          <TouchableOpacity style={[s.scanBtn, s.scanBtnPrimary]} activeOpacity={0.85} onPress={onScanReceipt} disabled={scanning}>
-            <Text style={s.scanBtnPrimaryText}>{scanning ? '読み取り中…' : '🧾 レシートから追加'}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={s.scanBtn} activeOpacity={0.85} onPress={onScanPhoto} disabled={scanning}>
-            <Text style={s.scanBtnText}>{scanning ? '…' : '📷 写真'}</Text>
-          </TouchableOpacity>
-        </View>
+        {/* 読み取りはバックエンド(/extract)が要る。未設定なら押しても必ず失敗するのでUIごと出さない。 */}
+        {scanAvailable && (
+          <View style={s.scanRow}>
+            <TouchableOpacity style={[s.scanBtn, s.scanBtnPrimary]} activeOpacity={0.85} onPress={onScanReceipt} disabled={scanning}>
+              <Text style={s.scanBtnPrimaryText}>{scanning ? '読み取り中…' : '🧾 レシートから追加'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={s.scanBtn} activeOpacity={0.85} onPress={onScanPhoto} disabled={scanning}>
+              <Text style={s.scanBtnText}>{scanning ? '…' : '📷 写真'}</Text>
+            </TouchableOpacity>
+          </View>
+        )}
 
         {/* まな板 */}
         <View style={s.boardBox}>

@@ -25,6 +25,7 @@ export function SettingsScreen({
   onEdit,
   onDelete,
   onOpenSupport,
+  onOpenAbout,
   isSupporter,
   purchasesAvailable,
   onBack,
@@ -34,6 +35,7 @@ export function SettingsScreen({
   onEdit: (index: number) => void;
   onDelete: (index: number) => void;
   onOpenSupport: () => void;
+  onOpenAbout: () => void;
   isSupporter: boolean;
   purchasesAvailable: boolean;
   onBack: () => void;
@@ -76,10 +78,20 @@ export function SettingsScreen({
         <Text style={s.addBtnText}>＋ 食べる人を追加</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={s.supportRow} activeOpacity={0.8} onPress={onOpenSupport}>
-        <Text style={s.supportText}>
-          アプリを応援する{isSupporter ? '（サポーター登録中）' : purchasesAvailable ? '（広告オフ・投げ銭）' : '（準備中）'}
-        </Text>
+      {/* 課金が繋がっていない間は導線ごと隠す。「準備中」と出しつつ買えない商品の価格を
+          見せると、審査で機能しない要素と見なされうるし、ユーザーにも不親切なため。
+          RevenueCat接続後に EXPO_PUBLIC_PURCHASES_MODE を設定すれば自動で復活する。 */}
+      {(purchasesAvailable || isSupporter) && (
+        <TouchableOpacity style={s.supportRow} activeOpacity={0.8} onPress={onOpenSupport}>
+          <Text style={s.supportText}>
+            アプリを応援する{isSupporter ? '（サポーター登録中）' : '（広告オフ・投げ銭）'}
+          </Text>
+          <Text style={s.supportArrow}>›</Text>
+        </TouchableOpacity>
+      )}
+      {/* プライバシーポリシー・問い合わせ窓口への導線。App Store の審査で求められる。 */}
+      <TouchableOpacity style={s.supportRow} activeOpacity={0.8} onPress={onOpenAbout}>
+        <Text style={s.supportText}>このアプリについて</Text>
         <Text style={s.supportArrow}>›</Text>
       </TouchableOpacity>
       <View style={{ height: 24 }} />

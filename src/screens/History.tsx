@@ -3,8 +3,18 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { theme } from '../theme';
 import type { MealHistory } from '../types';
 import { computeDeficits, TRACK_CATEGORIES } from '../engine/nutrition';
+import { adsLive } from '../config';
+import { LiveBannerAd } from '../components/Ads';
 
-export function HistoryScreen({ history, onBack }: { history: MealHistory[]; onBack: () => void }) {
+export function HistoryScreen({
+  history,
+  isSupporter,
+  onBack,
+}: {
+  history: MealHistory[];
+  isSupporter: boolean; // サポーターには広告を出さない
+  onBack: () => void;
+}) {
   const d = computeDeficits(history);
   const recent = [...history].sort((a, b) => b.cookedAt - a.cookedAt).slice(0, 7);
 
@@ -79,6 +89,9 @@ export function HistoryScreen({ history, onBack }: { history: MealHistory[]; onB
           </View>
         ))
       )}
+      {/* 履歴は「決める行為」と無関係なので広告を出してよい画面（src/engine/ads.ts の方針）。
+          一番下に置き、リストの邪魔をしない。サポーターには出さない。 */}
+      {adsLive && !isSupporter && <LiveBannerAd />}
       <View style={{ height: 24 }} />
     </ScrollView>
   );

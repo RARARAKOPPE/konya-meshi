@@ -1674,7 +1674,7 @@ function DoneScreen({
   return (
     <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
       <View style={{ alignItems: 'center', marginTop: 18 }}>
-        <Text style={{ fontSize: 48 }}>🍳</Text>
+        <Image source={mealImageSource(r)} style={{ width: 110, height: 110 }} resizeMode="contain" />
         <Text style={[styles.muted, { marginTop: 6 }]}>今日はこれ</Text>
         <Text style={[styles.title, { textAlign: 'center', marginTop: 2 }]}>{r.title}</Text>
         <Text style={[styles.muted, { marginTop: 4 }]}>

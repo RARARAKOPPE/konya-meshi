@@ -2,7 +2,7 @@
 // 次のEASビルド（開発ビルド再生成）が反映されるまでは未リンクの可能性がある。
 // ondevice.ts と同じ方針（遅延require + try/catch）でガードし、失敗時は
 // 呼び出し側（src/components/Ads.tsx）が「広告を出さない」にフォールバックする。
-import { Platform } from 'react-native';
+import { AppState, Platform } from 'react-native';
 import { adsLive } from '../config';
 
 export type GoogleMobileAdsModule = typeof import('react-native-google-mobile-ads');
@@ -47,6 +47,21 @@ export function bannerAdUnitId(mod: GoogleMobileAdsModule): string {
   return mod.TestIds.BANNER;
 }
 
+// iOSはアプリが完全にactiveになる前にATTを要求するとダイアログが表示されないまま
+// 失敗する（起動直後のuseEffectはactive遷移前に走りうる。審査でも再現：Guideline 2.1指摘 2026-07-20）。
+// active遷移を待ち、さらに遷移直後の取りこぼし対策で少し置いてから要求する。
+function waitUntilActive(): Promise<void> {
+  if (AppState.currentState === 'active') return Promise.resolve();
+  return new Promise((resolve) => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') {
+        sub.remove();
+        resolve();
+      }
+    });
+  });
+}
+
 let initialized = false;
 /**
  * ATT許諾（iOS）→ Mobile Ads SDK初期化。アプリ起動時に1回呼ぶ。
@@ -54,24 +69,32 @@ let initialized = false;
  */
 export async function initAdsSdk(): Promise<void> {
   if (initialized) return;
+  if (!adsLive) {
+    loadAdsModule(); // ログ出力のためだけに通す（null確定）
+    return;
+  }
+  initialized = true; // 二重初期化防止（失敗時も再試行しない。次回起動時に再試行される）
+  // ATTはSDKロードの成否と独立して必ず先に要求する（「トラッキングあり」申告に対応する審査必須要件。
+  // 万一SDKロードに失敗しても、許諾ダイアログ自体は出るようにしておく）。
+  if (Platform.OS === 'ios') {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const tt = require('expo-tracking-transparency') as typeof import('expo-tracking-transparency');
+      const { status } = await tt.getTrackingPermissionsAsync();
+      console.log(`[ads] ATT許諾の状態: ${status}`);
+      if (status === 'undetermined') {
+        await waitUntilActive();
+        await new Promise((r) => setTimeout(r, 600));
+        const r = await tt.requestTrackingPermissionsAsync();
+        console.log(`[ads] ATTダイアログの結果: ${r.status}`);
+      }
+    } catch (e) {
+      console.log(`[ads] ATT処理をスキップ: ${String(e)}`);
+    }
+  }
   const mod = loadAdsModule();
   if (!mod) return;
-  initialized = true; // 二重初期化防止（失敗時も再試行しない。次回起動時に再試行される）
   try {
-    if (Platform.OS === 'ios') {
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const tt = require('expo-tracking-transparency') as typeof import('expo-tracking-transparency');
-        const { status } = await tt.getTrackingPermissionsAsync();
-        console.log(`[ads] ATT許諾の状態: ${status}`);
-        if (status === 'undetermined') {
-          const r = await tt.requestTrackingPermissionsAsync();
-          console.log(`[ads] ATTダイアログの結果: ${r.status}`);
-        }
-      } catch (e) {
-        console.log(`[ads] ATT処理をスキップ: ${String(e)}`);
-      }
-    }
     const adapters = await mod.default().initialize();
     console.log(`[ads] Mobile Ads SDK 初期化OK（アダプタ${adapters?.length ?? 0}件）`);
   } catch (e) {

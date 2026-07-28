@@ -17,7 +17,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.kyoumeshi.app",
-      "buildNumber": "6",
+      "buildNumber": "7",
       "infoPlist": {
         "NSCameraUsageDescription": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。",
         "NSPhotoLibraryUsageDescription": "冷蔵庫やレシートの写真から食材を読み取るために使用します。",

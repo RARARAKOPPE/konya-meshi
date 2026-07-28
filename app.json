@@ -17,7 +17,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.kyoumeshi.app",
-      "buildNumber": "5",
+      "buildNumber": "6",
       "infoPlist": {
         "NSCameraUsageDescription": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。",
         "NSPhotoLibraryUsageDescription": "冷蔵庫やレシートの写真から食材を読み取るために使用します。",
@@ -33,10 +33,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#3E7D5A"
-      },
-      "permissions": [
-        "android.permission.RECORD_AUDIO"
-      ]
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -47,7 +44,8 @@
         "expo-image-picker",
         {
           "photosPermission": "冷蔵庫やレシートの写真から食材を読み取るために使用します。",
-          "cameraPermission": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。"
+          "cameraPermission": "冷蔵庫やレシートを撮影して食材を読み取るために使用します。",
+          "microphonePermission": false
         }
       ],
       [

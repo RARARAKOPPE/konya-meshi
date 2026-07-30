@@ -99,10 +99,16 @@ AdMob は「ストアに実在するアプリか」を検証してからでな�
 
 ### 未対応
 
-- [ ] **新しいEASビルドを出す**（上記2件は再ビルドしないと反映されない）
-      1.0の配信を止めたくないので、**先に「1. 配信地域を有効化」で1.0を世に出してから**、
-      1.0.1として出すのがよい。`app.json` の `version` を上げる（`buildNumber` は
-      eas.json の `autoIncrement: true` が面倒を見るので手で触らない）。
+- [x] **新しいEASビルドを出す**（2026-07-30）
+      **build 8**（version 1.0.1 / buildNumber 8、build id `46fd051a-a26a-4f6a-b0ac-01fff24c9cae`）。
+      IPAのInfo.plistをレンジリクエストで直接検証済み:
+      SKAdNetworkItems 50件・重複0、`GADApplicationIdentifier` は今日飯の実ID、
+      `NSMicrophoneUsageDescription` は不在（却下②対策を維持）。
+- [ ] **審査に出す前に GitHub Pages を公開すること**
+      build 8 のアプリ内ポリシーリンクは `https://rararakoppe.github.io/konya-meshi/privacy-policy.html`。
+      Pagesが未公開のまま提出すると、審査でこのリンクが404になり確実に弾かれる。
+- [ ] `eas submit` → ASCで新バージョン1.0.1を作成しbuild 8を紐付けて審査へ提出
+      （`eas submit` はバイナリのアップロードまでで、審査提出はしない）
 - [ ] **AndroidのApp IDがGoogleのテストIDのまま**（`app.json` の `androidAppId`）
       `ca-app-pub-3940256099942544~3347511713` は Google公式テスト用。
       Play配信するなら AdMob で Android アプリを登録して実IDに差し替える。

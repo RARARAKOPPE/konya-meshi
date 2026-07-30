@@ -62,9 +62,81 @@ function waitUntilActive(): Promise<void> {
   });
 }
 
+// ---- 同意ゲート ----------------------------------------------------------
+// UMP（GDPR同意）の判定が済むまでは広告をリクエストしない。判定前にリクエストすると
+// EEA等でGoogleのポリシー違反になるため、既定は「閉」。initAdsSdk() が必ず開閉を確定させる。
+// UMPの処理自体が失敗した場合は「開」に倒す（日本のみ配信なら同意は不要で、従来動作を維持したい）。
+let gateOpen = false;
+let privacyOptionsRequired = false;
+const stateListeners = new Set<() => void>();
+
+/** 広告をリクエストしてよいか（UMPの同意判定が済み、かつ同意が得られている）。 */
+export function adsGateOpen(): boolean {
+  return gateOpen;
+}
+/** 「プライバシー設定」の再表示メニューを出す義務があるか（EEA等でUMPが要求する）。 */
+export function adsPrivacyOptionsRequired(): boolean {
+  return privacyOptionsRequired;
+}
+/** ゲート状態の変化を購読する。戻り値を呼ぶと解除。 */
+export function subscribeAdsState(listener: () => void): () => void {
+  stateListeners.add(listener);
+  return () => {
+    stateListeners.delete(listener);
+  };
+}
+function setAdsState(next: { gateOpen: boolean; privacyOptionsRequired: boolean }): void {
+  gateOpen = next.gateOpen;
+  privacyOptionsRequired = next.privacyOptionsRequired;
+  console.log(`[ads] 同意ゲート: ${gateOpen ? '開（リクエスト可）' : '閉（広告を出さない）'} / プライバシー設定の掲示義務=${privacyOptionsRequired}`);
+  // 値が変わっていなくても必ず通知する（同意拒否でゲートが閉のままでも、
+  // 「プライバシー設定」ボタンの表示は更新しなければならない）。
+  stateListeners.forEach((l) => l());
+}
+
+/**
+ * UMP（User Messaging Platform）でGDPR同意を取得する。戻り値は「広告をリクエストしてよいか」。
+ * - 日本など対象外の地域では canRequestAds=true が即返り、UIは何も出ない
+ * - AdMob管理画面に同意メッセージが未設定なら isConsentFormAvailable=false のまま何も出ない（無害）
+ * 失敗時は従来動作を維持するため true を返す。
+ */
+async function gatherUmpConsent(mod: GoogleMobileAdsModule): Promise<boolean> {
+  try {
+    const info = await mod.AdsConsent.gatherConsent();
+    console.log(`[ads] UMP同意: status=${info.status} / canRequestAds=${info.canRequestAds} / フォーム有=${info.isConsentFormAvailable}`);
+    // enumを静的importするとモジュール未リンク時に落ちるため文字列で比較する。
+    privacyOptionsRequired = String(info.privacyOptionsRequirementStatus) === 'REQUIRED';
+    return info.canRequestAds;
+  } catch (e) {
+    console.log(`[ads] UMP同意の取得に失敗（従来どおり広告は出す）: ${String(e)}`);
+    return true;
+  }
+}
+
+/**
+ * 同意内容を後から変更するフォームを表示する（About画面の「広告のプライバシー設定」から呼ぶ）。
+ * 表示できたら true。EEA等で同意を撤回/変更された場合はゲートを再評価する。
+ */
+export async function showAdsPrivacyOptionsForm(): Promise<boolean> {
+  const mod = loadAdsModule();
+  if (!mod) return false;
+  try {
+    const info = await mod.AdsConsent.showPrivacyOptionsForm();
+    console.log(`[ads] プライバシー設定フォームを閉じた: canRequestAds=${info.canRequestAds}`);
+    setAdsState({
+      gateOpen: info.canRequestAds,
+      privacyOptionsRequired: String(info.privacyOptionsRequirementStatus) === 'REQUIRED',
+    });
+    return true;
+  } catch (e) {
+    console.log(`[ads] プライバシー設定フォームの表示に失敗: ${String(e)}`);
+    return false;
+  }
+}
+
 let initialized = false;
 /**
- * ATT許諾（iOS）→ Mobile Ads SDK初期化。アプリ起動時に1回呼ぶ。
+ * UMP同意（GDPR）→ ATT許諾（iOS）→ Mobile Ads SDK初期化。アプリ起動時に1回呼ぶ。
  * 失敗しても実害はない（各広告コンポーネントが個別にロード失敗を検知し「出さない」にフォールバックする）。
  */
 export async function initAdsSdk(): Promise<void> {
@@ -74,7 +146,20 @@ export async function initAdsSdk(): Promise<void> {
     return;
   }
   initialized = true; // 二重初期化防止（失敗時も再試行しない。次回起動時に再試行される）
-  // ATTはSDKロードの成否と独立して必ず先に要求する（「トラッキングあり」申告に対応する審査必須要件。
+
+  // ATTダイアログもUMPの同意フォームも、アプリが完全にactiveになる前に要求すると
+  // 表示されないまま失敗する（起動直後のuseEffectはactive遷移前に走りうる。
+  // 審査でも再現：Guideline 2.1指摘 2026-07-20）。両方の前で待つ。
+  await waitUntilActive();
+  await new Promise((r) => setTimeout(r, 600));
+
+  const mod = loadAdsModule();
+
+  // ① UMP → ② ATT → ③ SDK初期化 の順（Google推奨）。UMPの同意フォームとATTダイアログが
+  // 同時に出て取りこぼすのを避けるため、UMPを待ってからATTへ進む。
+  const canRequestAds = mod ? await gatherUmpConsent(mod) : true;
+
+  // ATTはSDKロードやUMPの成否と独立して必ず要求する（「トラッキングあり」申告に対応する審査必須要件。
   // 万一SDKロードに失敗しても、許諾ダイアログ自体は出るようにしておく）。
   if (Platform.OS === 'ios') {
     try {
@@ -83,8 +168,6 @@ export async function initAdsSdk(): Promise<void> {
       const { status } = await tt.getTrackingPermissionsAsync();
       console.log(`[ads] ATT許諾の状態: ${status}`);
       if (status === 'undetermined') {
-        await waitUntilActive();
-        await new Promise((r) => setTimeout(r, 600));
         const r = await tt.requestTrackingPermissionsAsync();
         console.log(`[ads] ATTダイアログの結果: ${r.status}`);
       }
@@ -92,8 +175,13 @@ export async function initAdsSdk(): Promise<void> {
       console.log(`[ads] ATT処理をスキップ: ${String(e)}`);
     }
   }
-  const mod = loadAdsModule();
+
+  setAdsState({ gateOpen: canRequestAds, privacyOptionsRequired });
   if (!mod) return;
+  if (!canRequestAds) {
+    console.log('[ads] 同意が得られていないため、SDK初期化と広告リクエストを行わない');
+    return;
+  }
   try {
     const adapters = await mod.default().initialize();
     console.log(`[ads] Mobile Ads SDK 初期化OK（アダプタ${adapters?.length ?? 0}件）`);

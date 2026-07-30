@@ -1,16 +1,40 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { theme } from '../theme';
-import { loadAdsModule, nativeAdUnitId, interstitialAdUnitId, bannerAdUnitId } from '../engine/adsSdk';
+import {
+  loadAdsModule,
+  nativeAdUnitId,
+  interstitialAdUnitId,
+  bannerAdUnitId,
+  adsGateOpen,
+  adsPrivacyOptionsRequired,
+  subscribeAdsState,
+} from '../engine/adsSdk';
 import type { NativeAd as NativeAdType } from 'react-native-google-mobile-ads';
+
+// UMPの同意判定が終わるまでは false。終わると再レンダリングされて広告が出る。
+// （判定前に広告をリクエストするとEEA等でポリシー違反になるため、adsSdk側で既定は「閉」）
+export function useAdsGate(): boolean {
+  const [open, setOpen] = useState(adsGateOpen);
+  useEffect(() => subscribeAdsState(() => setOpen(adsGateOpen())), []);
+  return open;
+}
+
+/** 「広告のプライバシー設定」メニューを掲示する義務があるか（About画面で使う）。 */
+export function useAdsPrivacyOptionsRequired(): boolean {
+  const [required, setRequired] = useState(adsPrivacyOptionsRequired);
+  useEffect(() => subscribeAdsState(() => setRequired(adsPrivacyOptionsRequired())), []);
+  return required;
+}
 
 // 細めのバナー。意思決定フロー（疲労度→決めて→提案→これにする）には出さない方針のため、
 // 置いてよいのは履歴・設定のような「決める行為と関係ない画面」だけ（src/engine/ads.ts のコメント参照）。
 // ロードに失敗したら何も描画しない（空の枠だけ残さない）。
 export function LiveBannerAd() {
   const [failed, setFailed] = useState(false);
+  const gateOpen = useAdsGate();
   const mod = loadAdsModule();
-  if (!mod || failed) return null;
+  if (!mod || failed || !gateOpen) return null;
   const { BannerAd, BannerAdSize } = mod;
   const unitId = bannerAdUnitId(mod);
   return (
@@ -35,8 +59,10 @@ export function LiveNativeAdSlot() {
   const [ad, setAd] = useState<NativeAdType | null>(null);
   const [failed, setFailed] = useState(false);
   const [closed, setClosed] = useState(false);
+  const gateOpen = useAdsGate();
 
   useEffect(() => {
+    if (!gateOpen) return; // 同意判定が済むまではリクエストしない（済んだら再実行される）
     let cancelled = false;
     const mod = loadAdsModule();
     if (!mod) { setFailed(true); return; }
@@ -46,7 +72,7 @@ export function LiveNativeAdSlot() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [gateOpen]);
   useEffect(() => () => { ad?.destroy(); }, [ad]);
 
   const mod = loadAdsModule();
@@ -91,6 +117,7 @@ export function LiveNativeAdSlot() {
 // ロードが間に合わない/失敗した場合は広告なしでそのまま閉じる（ユーザーを待たせない）。
 export function LiveInterstitialAd({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   const shownRef = useRef(false);
+  const gateOpen = useAdsGate();
 
   // このコンポーネントは常時マウントされている（App.tsx側で <FullScreenAdModal visible=... /> を
   // 常に描画しているため）。そのため visible になるまでは広告SDKに一切触れない：
@@ -100,6 +127,7 @@ export function LiveInterstitialAd({ visible, onClose }: { visible: boolean; onC
     if (!visible || shownRef.current) return;
     const mod = loadAdsModule();
     if (!mod) { onClose(); return; } // 未リンク/liveでない → 広告なしでそのまま閉じる
+    if (!gateOpen) { console.log('[ads] 同意が無いため全画面広告は出さない'); onClose(); return; }
 
     let cancelled = false;
     const unitId = interstitialAdUnitId(mod);
@@ -124,7 +152,7 @@ export function LiveInterstitialAd({ visible, onClose }: { visible: boolean; onC
 
     return () => { cancelled = true; clearTimeout(t); unsubLoaded(); unsubError(); unsubClosed(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible]);
+  }, [visible, gateOpen]);
 
   return null; // 表示自体はSDK側のネイティブ全画面ビューが担当する
 }

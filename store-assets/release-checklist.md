@@ -22,7 +22,7 @@ App Store Connect の入力順に並べています。`store-listing-draft.md` �
 
 | 項目 | 値 |
 |---|---|
-| プライバシーポリシーURL | `https://rararakoppe.hatenablog.com/entry/2026/07/15/005949` |
+| プライバシーポリシーURL | `https://rararakoppe.github.io/konya-meshi/privacy-policy.html` |
 | サポートURL | 同上（問い合わせ先がページ内にあるため要件を満たす） |
 | 問い合わせ | `sw.work.dev@gmail.com` |
 

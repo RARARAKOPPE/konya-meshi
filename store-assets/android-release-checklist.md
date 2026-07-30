@@ -77,7 +77,7 @@ pnpm dlx eas-cli@latest build --platform android --profile production
 | 項目 | 状態 |
 |---|---|
 | アプリ名・説明文・キーワード | `store-listing-draft.md` の日本語テキストをほぼそのまま流用可 |
-| プライバシーポリシーURL | 同じ: `https://rararakoppe.hatenablog.com/entry/2026/07/15/005949` |
+| プライバシーポリシーURL | 同じ: `https://rararakoppe.github.io/konya-meshi/privacy-policy.html` |
 | 問い合わせ先 | 同じ: sw.work.dev@gmail.com |
 | カテゴリ | フード・ドリンク |
 

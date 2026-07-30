@@ -149,7 +149,7 @@ App Store Connect の各入力欄に対応しています。文字数はすべ�
 ## サポートURL（必須）
 
 ```
-https://rararakoppe.hatenablog.com/entry/2026/07/15/005949
+https://rararakoppe.github.io/konya-meshi/privacy-policy.html
 ```
 
 **注意:** 本来はサポート専用ページが望ましいが、プライバシーポリシーと同じURLでも審査は通る。
@@ -161,7 +161,7 @@ https://rararakoppe.hatenablog.com/entry/2026/07/15/005949
 ## プライバシーポリシーURL（必須）
 
 ```
-https://rararakoppe.hatenablog.com/entry/2026/07/15/005949
+https://rararakoppe.github.io/konya-meshi/privacy-policy.html
 ```
 
 ---

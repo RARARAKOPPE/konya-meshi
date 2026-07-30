@@ -2,10 +2,15 @@ import React from 'react';
 import { Alert, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { theme } from '../theme';
 import appJson from '../../app.json';
+import { useAdsPrivacyOptionsRequired } from '../components/Ads';
+import { showAdsPrivacyOptionsForm } from '../engine/adsSdk';
 
 // App Store の審査ではプライバシーポリシーとサポート窓口への導線が求められる。
 // ストア掲載欄だけでなくアプリ内にも置いておくと、審査でも実利用でも収まりが良い。
-export const PRIVACY_POLICY_URL = 'https://rararakoppe.hatenablog.com/entry/2026/07/15/005949';
+// AdMobのapp-ads.txtはデベロッパーサイトのドメインのルートに置く必要があり、はてなブログでは
+// ルートにファイルを置けない。そのためGitHub Pages（rararakoppe.github.io）へ移設した。
+// サイトの実体は別リポジトリ rararakoppe.github.io。
+export const PRIVACY_POLICY_URL = 'https://rararakoppe.github.io/konya-meshi/privacy-policy.html';
 export const SUPPORT_EMAIL = 'sw.work.dev@gmail.com';
 
 // バージョンは app.json から読む（画面に直書きすると更新漏れで実態とズレるため）。
@@ -22,6 +27,8 @@ async function openUrl(url: string, failMessage: string) {
 }
 
 export function AboutScreen({ onBack }: { onBack: () => void }) {
+  // EEA等ではUMPが「同意をあとから変更する導線」の掲示を義務づける。対象外の地域では出さない。
+  const showPrivacyOptions = useAdsPrivacyOptionsRequired();
   return (
     <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false}>
       <View style={s.rowBetween}>
@@ -75,6 +82,19 @@ export function AboutScreen({ onBack }: { onBack: () => void }) {
         <Text style={s.rowText}>プライバシーポリシー</Text>
         <Text style={s.rowArrow}>›</Text>
       </TouchableOpacity>
+      {showPrivacyOptions && (
+        <TouchableOpacity
+          style={s.row}
+          activeOpacity={0.7}
+          onPress={async () => {
+            const shown = await showAdsPrivacyOptionsForm();
+            if (!shown) Alert.alert('開けませんでした', '広告のプライバシー設定を表示できませんでした。時間をおいて試してください。');
+          }}
+        >
+          <Text style={s.rowText}>広告のプライバシー設定</Text>
+          <Text style={s.rowArrow}>›</Text>
+        </TouchableOpacity>
+      )}
       <TouchableOpacity
         style={s.row}
         activeOpacity={0.7}

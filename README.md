@@ -134,7 +134,7 @@ pnpm dlx eas-cli@latest build --profile development --platform ios --non-interac
 - `app.json` の `ios.bundleIdentifier` / `android.package` をApple Developer/Google Play用の正式IDへ確定する。
 - ~~`assets/` の仮アイコンを正式デザインへ差し替える。~~ 完了（2026-07-11）: 緑地に白「飯」のワードマーク。`icon.png`(不透過1024) / `adaptive-icon.png`(白飯透過・背景`#3E7D5A`) / `splash.png` / `favicon.png` を差し替え済み。旧アセットは `assets/_backup_pre_iconC/` に退避。再生成は `scripts/gen-app-icon.mjs`（要 `@resvg/resvg-js` + `pngjs`、ヒラギノ角ゴW7を使用）。
 - ~~広告を出すならAdMob等を接続する。~~ 完了（2026-07-15）: 「広告」節を参照。**残: AdMobアカウントの承認（お支払い情報の登録）**。
-- ~~プライバシーポリシーURL~~ 完了（2026-07-15）: `https://rararakoppe.hatenablog.com/entry/2026/07/15/005949`（`src/screens/About.tsx` に定数あり）。
+- ~~プライバシーポリシーURL~~ 完了（2026-07-15）: `https://rararakoppe.github.io/konya-meshi/privacy-policy.html`（`src/screens/About.tsx` に定数あり）。
 - **App Store Connectのプライバシー申告**（AdMob導入により「識別子」「トラッキング」の申告が必要）。
 - **ストア説明文・スクリーンショット**を用意する。スクショはApp Store規定サイズ（6.9型 1290×2796 等）が必要で、実機のスクショ（1206×2622）はそのままでは通らない。
 - 課金を出すならRevenueCat等を接続し、`src/engine/purchases.ts` を実課金に差し替える。**初回リリースでは見送り**（審査が一段厳しくなるため、広告のみで先に出す方針）。App Store Connect側の商品登録（`konya_tip_150` 等）も必要。

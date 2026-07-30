@@ -67,8 +67,9 @@ AdMob は「ストアに実在するアプリか」を検証してからでな�
       ホスト先は **GitHub Pages のユーザーサイト `rararakoppe.github.io`** に決定（2026-07-30）。
       はてなブログはドメインのルートにファイルを置けないため移設した。
       サイトの実体は別リポジトリ `rararakoppe.github.io`（ローカル: `/Users/wmac/AI-edit-Mac/rararakoppe.github.io`）。
-      - [ ] GitHubで `rararakoppe.github.io` リポジトリを作成して push
-      - [ ] Settings → Pages → Source: `main` / root で公開
+      - [x] GitHubで `rararakoppe.github.io` リポジトリを作成して push（2026-07-30）
+      - [x] Pages公開（`<user>.github.io` は**自動で有効化される**。Settingsの操作は不要。
+            push後1分ほど404が続くので待つ。`/app-ads.txt` が `text/plain` で200を返すことを確認済み）
       - [ ] ASCの**マーケティングURL**を `https://rararakoppe.github.io` にする
             （App Store製品ページの「デベロッパWebサイト」がクローラの参照元になる）
       - [ ] AdMob → アプリ → app-ads.txt タブでクロール状況を確認（反映に数日）
@@ -104,9 +105,8 @@ AdMob は「ストアに実在するアプリか」を検証してからでな�
       IPAのInfo.plistをレンジリクエストで直接検証済み:
       SKAdNetworkItems 50件・重複0、`GADApplicationIdentifier` は今日飯の実ID、
       `NSMicrophoneUsageDescription` は不在（却下②対策を維持）。
-- [ ] **審査に出す前に GitHub Pages を公開すること**
-      build 8 のアプリ内ポリシーリンクは `https://rararakoppe.github.io/konya-meshi/privacy-policy.html`。
-      Pagesが未公開のまま提出すると、審査でこのリンクが404になり確実に弾かれる。
+- [x] **GitHub Pages公開**（2026-07-30）。build 8 のアプリ内ポリシーリンク
+      `https://rararakoppe.github.io/konya-meshi/privacy-policy.html` が200で開くことを確認済み。
 - [ ] `eas submit` → ASCで新バージョン1.0.1を作成しbuild 8を紐付けて審査へ提出
       （`eas submit` はバイナリのアップロードまでで、審査提出はしない）
 - [ ] **AndroidのApp IDがGoogleのテストIDのまま**（`app.json` の `androidAppId`）

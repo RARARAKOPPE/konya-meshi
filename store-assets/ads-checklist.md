@@ -135,10 +135,13 @@ curl -s "https://itunes.apple.com/lookup?bundleId=com.kyoumeshi.app&country=jp" 
       `NSMicrophoneUsageDescription` は不在（却下②対策を維持）。
 - [x] **GitHub Pages公開**（2026-07-30）。build 8 のアプリ内ポリシーリンク
       `https://rararakoppe.github.io/konya-meshi/privacy-policy.html` が200で開くことを確認済み。
-- [ ] `eas submit` → ASCで新バージョン1.0.1を作成しbuild 8を紐付けて審査へ提出
-      （`eas submit` はバイナリのアップロードまでで、審査提出はしない）
-      **1.0.1では必ずマーケティングURLに `https://rararakoppe.github.io` を設定すること。**
+- [x] `eas submit` 完了（2026-07-31、submission `a2ed69ff-fc54-421e-8019-c1de5977750d`）。
+      build 8 = version 1.0.1 をApp Store Connectへアップロード済み。
+- [ ] **ASCで新バージョン1.0.1を作成しbuild 8を紐付けて審査へ提出**（`eas submit` は
+      バイナリのアップロードまでで、審査提出はしない）
+      **必ずマーケティングURLに `https://rararakoppe.github.io` を設定すること。**
       これが今回の提出の主目的（AdMobの配信制限解除がこれ待ちになっている）。
+      「このバージョンに関する新機能」も必須（初のアップデートのため）。
 
 ### 既知の残リスク（build 8 で受容した）
 

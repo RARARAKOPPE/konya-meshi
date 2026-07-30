@@ -137,6 +137,18 @@ curl -s "https://itunes.apple.com/lookup?bundleId=com.kyoumeshi.app&country=jp" 
       `https://rararakoppe.github.io/konya-meshi/privacy-policy.html` が200で開くことを確認済み。
 - [ ] `eas submit` → ASCで新バージョン1.0.1を作成しbuild 8を紐付けて審査へ提出
       （`eas submit` はバイナリのアップロードまでで、審査提出はしない）
+      **1.0.1では必ずマーケティングURLに `https://rararakoppe.github.io` を設定すること。**
+      これが今回の提出の主目的（AdMobの配信制限解除がこれ待ちになっている）。
+
+### 既知の残リスク（build 8 で受容した）
+
+UMP導入で起動時の順序を `UMP同意 → ATT` に変えたが、`gatherConsent()` にタイムアウトを
+付けていない。**万一この呼び出しがハングするとATTダイアログが出ない**——却下①とまったく
+同じ症状になる。AdMobにGDPRメッセージ未設定のうちは同意フォームが出ず即座に返るうえ、
+UMP SDK自体も内部タイムアウトを持つため発生確率は低いと判断し、build 8 はこのまま提出した
+（2026-07-31）。**もしGuideline 2.1で再度却下されたら、真っ先にここを疑う。**
+対処は `gatherUmpConsent()` を `Promise.race` でタイムアウトさせ、時間切れなら
+ATT要求へ進める（EEAで同意フォーム表示中に発火しない長さにすること）。
 - [ ] **AndroidのApp IDがGoogleのテストIDのまま**（`app.json` の `androidAppId`）
       `ca-app-pub-3940256099942544~3347511713` は Google公式テスト用。
       Play配信するなら AdMob で Android アプリを登録して実IDに差し替える。
